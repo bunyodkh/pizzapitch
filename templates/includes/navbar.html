@@ -1,0 +1,35 @@
+{% load static %}
+{% load i18n %}
+
+<section class="section">
+    <section class="section-content navbar">
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="{% url 'main:index' %}"><img src="{% static 'images/logo.png' %}" alt="PizzaPitch Logo"></a>
+            </div>
+
+            <ul class="nav-items">
+                <li class="nav-item"><a href="#about">{% trans 'О нас'%}</a></li>
+                <li class="nav-item"><a href="#events">{% trans 'Мероприятия'%}</a></li>
+                <li class="nav-item"><a href="#partners">{% trans 'Партнеры'%}</a></li>
+                <li class="nav-item"><a href="#mentors">{% trans 'Менторы'%}</a></li>
+                <li class="nav-item"><a href="#contacts">{% trans 'Напишите нам'%}</a></li>
+            </ul>
+
+            {% get_current_language as LANGUAGE_CODE %}
+
+            <ul class="nav-items lang">
+                <li class="nav-item lang-item{% if LANGUAGE_CODE == 'ru' %} lang-selected {% endif %}"><a href="/ru{{ request.path|slice:'3:' }}">{% trans 'Рус'%}</a></li>
+                <li class="nav-item lang-item{% if LANGUAGE_CODE == 'uz' %} lang-selected {% endif %}"><a href="/uz{{ request.path|slice:'3:' }}">{% trans 'Узб'%}</a></li>
+                <li class="nav-item lang-item{% if LANGUAGE_CODE == 'en' %} lang-selected {% endif %}"><a href="/en{{ request.path|slice:'3:' }}">{% trans 'Англ'%}</a></li>
+            </ul>
+
+            <div class="wrapper-menu">
+                <div class="line-menu half start"></div>
+                <div class="line-menu"></div>
+                <div class="line-menu half end"></div>
+            </div>
+        </nav>
+    </section>
+</section>
+

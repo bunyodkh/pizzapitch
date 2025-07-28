@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-24 21:44+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\core\settings.py:106
+msgid "English"
+msgstr "English"
+
+#: .\core\settings.py:107
+msgid "Russian"
+msgstr "Russian"
+
+#: .\core\settings.py:108
+msgid "Uzbek"
+msgstr "Uzbek"
+
+#: .\events\forms.py:14
+msgid "Ваше имя"
+msgstr ""
+
+#: .\events\forms.py:15
+msgid "Ваш телефон"
+msgstr ""
+
+#: .\events\forms.py:16
+msgid "Ваш ник в Телеграм"
+msgstr ""
+
+#: .\events\forms.py:17
+msgid "Название вашего стартапа"
+msgstr ""
+
+#: .\events\forms.py:18
+msgid "Краткое описание вашего стартапа"
+msgstr ""
+
+#: .\events\forms.py:19 .\events\forms.py:29 .\events\models.py:75
+msgid "Ссылка на презентацию"
+msgstr ""
+
+#: .\events\forms.py:24
+msgid "Полное имя"
+msgstr ""
+
+#: .\events\forms.py:25
+msgid "Номер телефона"
+msgstr ""
+
+#: .\events\forms.py:26
+msgid "Телеграм ник"
+msgstr ""
+
+#: .\events\forms.py:27 .\events\models.py:73
+msgid "Название стартапа"
+msgstr ""
+
+#: .\events\forms.py:28
+msgid "Краткая информация о стартапе"
+msgstr ""
+
+#: .\events\forms.py:30
+msgid ""
+"Согласны ли вы со съемкой вашей презентации, публикацией информации о вашем "
+"стартапе и делиться своими контактами с партнерами проекта и "
+"заинтересованными сторонами?"
+msgstr ""
+
+#: .\events\forms.py:37
+msgid "Полное имя обязательно."
+msgstr ""
+
+#: .\events\forms.py:43
+msgid "Номер телефона обязателен."
+msgstr ""
+
+#: .\events\forms.py:49
+msgid "Телеграм ник обязателен."
+msgstr ""
+
+#: .\events\forms.py:55
+msgid "Название стартапа обязательно."
+msgstr ""
+
+#: .\events\forms.py:61
+msgid "Краткое описание стартапа обязательно."
+msgstr ""
+
+#: .\events\forms.py:67
+msgid "Ссылка на презентацию обязательна."
+msgstr ""
+
+#: .\events\forms.py:73
+msgid "Пожалуйста, выберите согласие на обработку персональных данных."
+msgstr ""
+
+#: .\events\models.py:6 .\events\models.py:29
+msgid "Название"
+msgstr ""
+
+#: .\events\models.py:7
+msgid "Код названия"
+msgstr ""
+
+#: .\events\models.py:9 .\events\models.py:33
+msgid "Описание"
+msgstr ""
+
+#: .\events\models.py:10 .\events\models.py:34
+msgid "Описание на узбекском"
+msgstr ""
+
+#: .\events\models.py:11 .\events\models.py:35
+msgid "Описание на английском"
+msgstr ""
+
+#: .\events\models.py:13 .\events\models.py:37
+msgid "Изображение"
+msgstr ""
+
+#: .\events\models.py:15 .\events\models.py:49 .\events\models.py:91
+msgid "Дата создания"
+msgstr ""
+
+#: .\events\models.py:16 .\events\models.py:50 .\events\models.py:92
+msgid "Дата обновления"
+msgstr ""
+
+#: .\events\models.py:19 .\events\models.py:27
+#, fuzzy
+#| msgid "Мероприятия"
+msgid "Тип мероприятия"
+msgstr "Events"
+
+#: .\events\models.py:20
+#, fuzzy
+#| msgid "Мероприятия"
+msgid "Типы мероприятий"
+msgstr "Events"
+
+#: .\events\models.py:30
+msgid "Акцент к названию"
+msgstr ""
+
+#: .\events\models.py:39
+msgid "Дата и время"
+msgstr ""
+
+#: .\events\models.py:41
+msgid "Место проведения"
+msgstr ""
+
+#: .\events\models.py:42
+msgid "Место проведения на узбекском"
+msgstr ""
+
+#: .\events\models.py:43
+msgid "Место проведения на английском"
+msgstr ""
+
+#: .\events\models.py:46
+msgid "Крайний срок регистрации"
+msgstr ""
+
+#: .\events\models.py:47
+msgid "Активно"
+msgstr ""
+
+#: .\events\models.py:53 .\events\models.py:67
+#, fuzzy
+#| msgid "Мероприятия"
+msgid "Мероприятие"
+msgstr "Events"
+
+#: .\events\models.py:54 .\templates\includes\navbar.html:13
+msgid "Мероприятия"
+msgstr "Events"
+
+#: .\events\models.py:69
+msgid "Имя"
+msgstr ""
+
+#: .\events\models.py:70
+msgid "Телефон"
+msgstr ""
+
+#: .\events\models.py:71
+msgid "Телеграм"
+msgstr ""
+
+#: .\events\models.py:74
+msgid "Описание стартапа"
+msgstr ""
+
+#: .\events\models.py:78
+msgid "Да"
+msgstr ""
+
+#: .\events\models.py:79
+msgid "Нет"
+msgstr ""
+
+#: .\events\models.py:86
+msgid "Согласие на обработку персональных данных"
+msgstr ""
+
+#: .\events\models.py:89
+msgid "Выбран"
+msgstr ""
+
+#: .\events\models.py:96
+msgid "Участник"
+msgstr ""
+
+#: .\events\models.py:97
+msgid "Участники"
+msgstr ""
+
+#: .\events\views.py:19
+msgid ""
+"Мы получили вашу заявка на участие! Спасибо за интерес. Мы с вами свяжемся."
+msgstr ""
+
+#: .\templates\includes\head.html:7
+msgid "PizzaPitch - Place you want to pitch."
+msgstr ""
+
+#: .\templates\includes\navbar.html:12 .\templates\index.html:144
+msgid "О нас"
+msgstr "About Us"
+
+#: .\templates\includes\navbar.html:14
+msgid "Партнеры"
+msgstr "Partners"
+
+#: .\templates\includes\navbar.html:15
+msgid "Менторы"
+msgstr "Mentors"
+
+#: .\templates\includes\navbar.html:16
+msgid "Напишите нам"
+msgstr ""
+
+#: .\templates\includes\navbar.html:20
+msgid "Рус"
+msgstr ""
+
+#: .\templates\includes\navbar.html:21
+msgid "Узб"
+msgstr ""
+
+#: .\templates\includes\navbar.html:22
+msgid "Англ"
+msgstr ""
+
+#: .\templates\index.html:25
+msgid "дней"
+msgstr ""
+
+#: .\templates\index.html:26
+msgid "часов"
+msgstr ""
+
+#: .\templates\index.html:27
+msgid "минут"
+msgstr ""
+
+#: .\templates\index.html:28
+msgid "секунд"
+msgstr ""
+
+#: .\templates\index.html:31
+msgid "осталось до окончания регистрации"
+msgstr ""
+
+#: .\templates\index.html:127
+msgid "Отправить заявку"
+msgstr ""
+
+#: .\templates\index.html:149
+msgid ""
+"PizzaPitch — это уникальная платформа продвижения, которая объединяет "
+"основателей стартапов, предпринимателей, менторов и экспертов в одном месте "
+"для поддержки инноваций и развития бизнеса."
+msgstr ""
+
+#: .\templates\index.html:150
+msgid ""
+"Участники также могут принимать участие в тренингах и расширять свои деловые "
+"связи, находя потенциальных партнеров или инвесторов."
+msgstr ""
+
+#: .\templates\index.html:161
+#, fuzzy
+#| msgid "Мероприятия"
+msgid "Наши мероприятия"
+msgstr "Events"
+
+#: .\templates\index.html:207
+#, fuzzy
+#| msgid "Партнеры"
+msgid "Наши партнеры"
+msgstr "Partners"
+
+#: .\templates\index.html:226
+#, fuzzy
+#| msgid "Менторы"
+msgid "Наши менторы"
+msgstr "Mentors"
+
+#: .\templates\index.html:287
+msgid "Связаться с нами"
+msgstr ""
