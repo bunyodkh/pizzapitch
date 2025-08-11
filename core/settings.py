@@ -1,7 +1,8 @@
-from pathlib import Path
-from decouple import config, Csv
-from django.utils.translation import gettext_lazy as _
 import os
+from pathlib import Path
+
+from decouple import Csv, config
+from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,9 +21,9 @@ FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 3000
 
 INSTALLED_APPS = [
-    'unfold',  
-    'unfold.contrib.filters',  
-    'unfold.contrib.forms', 
+    'unfold',
+    'unfold.contrib.filters',
+    'unfold.contrib.forms',
 
     'django.contrib.admin',
     'django.contrib.auth',

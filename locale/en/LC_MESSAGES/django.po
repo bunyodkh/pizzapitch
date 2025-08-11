@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-24 21:44+0500\n"
+"POT-Creation-Date: 2025-08-11 09:43+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,311 +18,523 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\core\settings.py:106
+#: core/settings.py:115
 msgid "English"
 msgstr "English"
 
-#: .\core\settings.py:107
+#: core/settings.py:116
 msgid "Russian"
 msgstr "Russian"
 
-#: .\core\settings.py:108
+#: core/settings.py:117
 msgid "Uzbek"
 msgstr "Uzbek"
 
-#: .\events\forms.py:14
+#: events/forms.py:14 events/forms.py:84
 msgid "Ваше имя"
 msgstr ""
 
-#: .\events\forms.py:15
+#: events/forms.py:15 events/forms.py:85
 msgid "Ваш телефон"
 msgstr ""
 
-#: .\events\forms.py:16
+#: events/forms.py:16
 msgid "Ваш ник в Телеграм"
 msgstr ""
 
-#: .\events\forms.py:17
+#: events/forms.py:17
 msgid "Название вашего стартапа"
 msgstr ""
 
-#: .\events\forms.py:18
+#: events/forms.py:18
 msgid "Краткое описание вашего стартапа"
 msgstr ""
 
-#: .\events\forms.py:19 .\events\forms.py:29 .\events\models.py:75
+#: events/forms.py:19 events/forms.py:29 events/models.py:79
 msgid "Ссылка на презентацию"
 msgstr ""
 
-#: .\events\forms.py:24
+#: events/forms.py:24 events/forms.py:91
 msgid "Полное имя"
 msgstr ""
 
-#: .\events\forms.py:25
+#: events/forms.py:25 events/forms.py:92
 msgid "Номер телефона"
 msgstr ""
 
-#: .\events\forms.py:26
+#: events/forms.py:26 events/forms.py:93
 msgid "Телеграм ник"
 msgstr ""
 
-#: .\events\forms.py:27 .\events\models.py:73
+#: events/forms.py:27 events/models.py:77
 msgid "Название стартапа"
 msgstr ""
 
-#: .\events\forms.py:28
+#: events/forms.py:28
 msgid "Краткая информация о стартапе"
 msgstr ""
 
-#: .\events\forms.py:30
+#: events/forms.py:30
 msgid ""
 "Согласны ли вы со съемкой вашей презентации, публикацией информации о вашем "
 "стартапе и делиться своими контактами с партнерами проекта и "
 "заинтересованными сторонами?"
 msgstr ""
 
-#: .\events\forms.py:37
+#: events/forms.py:37 events/forms.py:101
 msgid "Полное имя обязательно."
 msgstr ""
 
-#: .\events\forms.py:43
+#: events/forms.py:43 events/forms.py:107
 msgid "Номер телефона обязателен."
 msgstr ""
 
-#: .\events\forms.py:49
+#: events/forms.py:49
 msgid "Телеграм ник обязателен."
 msgstr ""
 
-#: .\events\forms.py:55
+#: events/forms.py:55
 msgid "Название стартапа обязательно."
 msgstr ""
 
-#: .\events\forms.py:61
+#: events/forms.py:61
 msgid "Краткое описание стартапа обязательно."
 msgstr ""
 
-#: .\events\forms.py:67
+#: events/forms.py:67
 msgid "Ссылка на презентацию обязательна."
 msgstr ""
 
-#: .\events\forms.py:73
+#: events/forms.py:73 events/forms.py:119
 msgid "Пожалуйста, выберите согласие на обработку персональных данных."
 msgstr ""
 
-#: .\events\models.py:6 .\events\models.py:29
+#: events/forms.py:86
+msgid "Ваш ник в Телеграм (необязательно)"
+msgstr ""
+
+#: events/forms.py:94
+msgid "Согласны ли вы на обработку персональных данных?"
+msgstr ""
+
+#: events/models.py:7 events/models.py:30
 msgid "Название"
 msgstr ""
 
-#: .\events\models.py:7
+#: events/models.py:8
 msgid "Код названия"
 msgstr ""
 
-#: .\events\models.py:9 .\events\models.py:33
+#: events/models.py:10 events/models.py:34
 msgid "Описание"
 msgstr ""
 
-#: .\events\models.py:10 .\events\models.py:34
+#: events/models.py:11 events/models.py:35
 msgid "Описание на узбекском"
 msgstr ""
 
-#: .\events\models.py:11 .\events\models.py:35
+#: events/models.py:12 events/models.py:36
 msgid "Описание на английском"
 msgstr ""
 
-#: .\events\models.py:13 .\events\models.py:37
+#: events/models.py:14 events/models.py:38 mentors/models.py:17
 msgid "Изображение"
 msgstr ""
 
-#: .\events\models.py:15 .\events\models.py:49 .\events\models.py:91
+#: events/models.py:16 events/models.py:51 events/models.py:95
+#: events/models.py:126
 msgid "Дата создания"
 msgstr ""
 
-#: .\events\models.py:16 .\events\models.py:50 .\events\models.py:92
+#: events/models.py:17 events/models.py:52 events/models.py:96
+#: events/models.py:127
 msgid "Дата обновления"
 msgstr ""
 
-#: .\events\models.py:19 .\events\models.py:27
+#: events/models.py:20 events/models.py:28
 #, fuzzy
 #| msgid "Мероприятия"
 msgid "Тип мероприятия"
 msgstr "Events"
 
-#: .\events\models.py:20
+#: events/models.py:21
 #, fuzzy
 #| msgid "Мероприятия"
 msgid "Типы мероприятий"
 msgstr "Events"
 
-#: .\events\models.py:30
+#: events/models.py:31
 msgid "Акцент к названию"
 msgstr ""
 
-#: .\events\models.py:39
+#: events/models.py:40
 msgid "Дата и время"
 msgstr ""
 
-#: .\events\models.py:41
+#: events/models.py:42
 msgid "Место проведения"
 msgstr ""
 
-#: .\events\models.py:42
+#: events/models.py:43
 msgid "Место проведения на узбекском"
 msgstr ""
 
-#: .\events\models.py:43
+#: events/models.py:44
 msgid "Место проведения на английском"
 msgstr ""
 
-#: .\events\models.py:46
+#: events/models.py:47
 msgid "Крайний срок регистрации"
 msgstr ""
 
-#: .\events\models.py:47
+#: events/models.py:48
 msgid "Активно"
 msgstr ""
 
-#: .\events\models.py:53 .\events\models.py:67
+#: events/models.py:49
+msgid "Регистрация закрыта"
+msgstr ""
+
+#: events/models.py:55 events/models.py:71 events/models.py:108
 #, fuzzy
 #| msgid "Мероприятия"
 msgid "Мероприятие"
 msgstr "Events"
 
-#: .\events\models.py:54 .\templates\includes\navbar.html:13
+#: events/models.py:56 templates/includes/navbar.html:13
 msgid "Мероприятия"
 msgstr "Events"
 
-#: .\events\models.py:69
+#: events/models.py:73 events/models.py:110 mentors/models.py:6
 msgid "Имя"
 msgstr ""
 
-#: .\events\models.py:70
+#: events/models.py:74 events/models.py:111 mentors/models.py:11
 msgid "Телефон"
 msgstr ""
 
-#: .\events\models.py:71
+#: events/models.py:75 events/models.py:112
 msgid "Телеграм"
 msgstr ""
 
-#: .\events\models.py:74
+#: events/models.py:78
 msgid "Описание стартапа"
 msgstr ""
 
-#: .\events\models.py:78
+#: events/models.py:82 events/models.py:115
 msgid "Да"
 msgstr ""
 
-#: .\events\models.py:79
+#: events/models.py:83 events/models.py:116
 msgid "Нет"
 msgstr ""
 
-#: .\events\models.py:86
+#: events/models.py:90 events/models.py:123
 msgid "Согласие на обработку персональных данных"
 msgstr ""
 
-#: .\events\models.py:89
+#: events/models.py:93
 msgid "Выбран"
 msgstr ""
 
-#: .\events\models.py:96
+#: events/models.py:100
 msgid "Участник"
 msgstr ""
 
-#: .\events\models.py:97
+#: events/models.py:101
 msgid "Участники"
 msgstr ""
 
-#: .\events\views.py:19
+#: events/models.py:130
+msgid "Гость"
+msgstr ""
+
+#: events/models.py:131
+msgid "Гости"
+msgstr ""
+
+#: events/views.py:20
 msgid ""
 "Мы получили вашу заявка на участие! Спасибо за интерес. Мы с вами свяжемся."
 msgstr ""
 
-#: .\templates\includes\head.html:7
-msgid "PizzaPitch - Place you want to pitch."
+#: events/views.py:41
+msgid "Спасибо за регистрацию! Мы свяжемся с вами перед мероприятием."
 msgstr ""
 
-#: .\templates\includes\navbar.html:12 .\templates\index.html:144
-msgid "О нас"
-msgstr "About Us"
+#: mentors/models.py:6
+msgid "Введите полное имя ментора"
+msgstr ""
 
-#: .\templates\includes\navbar.html:14
-msgid "Партнеры"
-msgstr "Partners"
+#: mentors/models.py:7
+msgid "Имя на узбекском"
+msgstr ""
 
-#: .\templates\includes\navbar.html:15
+#: mentors/models.py:7
+msgid "Введите имя ментора на узбекском"
+msgstr ""
+
+#: mentors/models.py:8
+msgid "Имя на английском"
+msgstr ""
+
+#: mentors/models.py:8
+msgid "Введите имя ментора на английском"
+msgstr ""
+
+#: mentors/models.py:10
+msgid "Электронная почта"
+msgstr ""
+
+#: mentors/models.py:10
+msgid "Введите электронную почту ментора"
+msgstr ""
+
+#: mentors/models.py:11
+msgid "Введите номер телефона ментора"
+msgstr ""
+
+#: mentors/models.py:13
+msgid "Должность"
+msgstr ""
+
+#: mentors/models.py:13
+msgid "Укажите должность или роль ментора"
+msgstr ""
+
+#: mentors/models.py:14
+msgid "Должность на узбекском"
+msgstr ""
+
+#: mentors/models.py:14
+msgid "Введите должность ментора на узбекском"
+msgstr ""
+
+#: mentors/models.py:15
+msgid "Должность на английском"
+msgstr ""
+
+#: mentors/models.py:15
+msgid "Введите должность ментора на английском"
+msgstr ""
+
+#: mentors/models.py:17
+msgid "Загрузите изображение ментора"
+msgstr ""
+
+#: mentors/models.py:19 partners/models.py:10
+msgid "Создано"
+msgstr ""
+
+#: mentors/models.py:20 partners/models.py:11
+msgid "Обновлено"
+msgstr ""
+
+#: mentors/models.py:22 partners/models.py:13
+msgid "Показывать на сайте"
+msgstr ""
+
+#: mentors/models.py:22
+msgid "Отметьте, если хотите показать ментора на сайте"
+msgstr ""
+
+#: mentors/models.py:25
+#, fuzzy
+#| msgid "Менторы"
+msgid "Ментор"
+msgstr "Mentors"
+
+#: mentors/models.py:26 templates/includes/navbar.html:15
 msgid "Менторы"
 msgstr "Mentors"
 
-#: .\templates\includes\navbar.html:16
+#: partners/models.py:6
+#, fuzzy
+#| msgid "Партнеры"
+msgid "Название партнера"
+msgstr "Partners"
+
+#: partners/models.py:6
+msgid "Введите название партнера"
+msgstr ""
+
+#: partners/models.py:7
+msgid "Логотип"
+msgstr ""
+
+#: partners/models.py:7
+msgid "Загрузите логотип партнера"
+msgstr ""
+
+#: partners/models.py:8
+msgid "Веб-сайт"
+msgstr ""
+
+#: partners/models.py:8
+msgid "Введите URL веб-сайта партнера"
+msgstr ""
+
+#: partners/models.py:13
+msgid "Отметьте, если хотите показать партнера на сайте"
+msgstr ""
+
+#: partners/models.py:16
+#, fuzzy
+#| msgid "Партнеры"
+msgid "Партнер"
+msgstr "Partners"
+
+#: partners/models.py:17 templates/includes/navbar.html:14
+msgid "Партнеры"
+msgstr "Partners"
+
+#: templates/404.html:12
+msgid "Страница не найдена"
+msgstr ""
+
+#: templates/404.html:14 templates/500.html:14
+msgid "Вернуться назад"
+msgstr ""
+
+#: templates/500.html:12
+msgid "Ошибка сервера"
+msgstr ""
+
+#: templates/includes/head.html:21
+msgid "PizzaPitch - Place you want to pitch."
+msgstr ""
+
+#: templates/includes/navbar.html:12 templates/index.html:136
+msgid "О нас"
+msgstr "About Us"
+
+#: templates/includes/navbar.html:16
 msgid "Напишите нам"
 msgstr ""
 
-#: .\templates\includes\navbar.html:20
+#: templates/includes/navbar.html:22
 msgid "Рус"
 msgstr ""
 
-#: .\templates\includes\navbar.html:21
+#: templates/includes/navbar.html:23
 msgid "Узб"
 msgstr ""
 
-#: .\templates\includes\navbar.html:22
+#: templates/includes/navbar.html:24
 msgid "Англ"
 msgstr ""
 
-#: .\templates\index.html:25
+#: templates/index.html:31
+#, fuzzy
+#| msgid "Мероприятия"
+msgid "Дата мероприятия:"
+msgstr "Events"
+
+#: templates/index.html:31
+msgid "августа"
+msgstr ""
+
+#: templates/index.html:31
+msgid "года"
+msgstr ""
+
+#: templates/index.html:32
+msgid "Адрес:"
+msgstr ""
+
+#: templates/index.html:32
+msgid "Ташкентский Финансовый Институт (ориентир станция метро Минор)"
+msgstr ""
+
+#: templates/index.html:39
 msgid "дней"
 msgstr ""
 
-#: .\templates\index.html:26
+#: templates/index.html:40
 msgid "часов"
 msgstr ""
 
-#: .\templates\index.html:27
+#: templates/index.html:41
 msgid "минут"
 msgstr ""
 
-#: .\templates\index.html:28
+#: templates/index.html:42
 msgid "секунд"
 msgstr ""
 
-#: .\templates\index.html:31
-msgid "осталось до окончания регистрации"
+#: templates/index.html:45
+#, fuzzy
+#| msgid "Мероприятия"
+msgid "осталось до начала мероприятия"
+msgstr "Events"
+
+#: templates/index.html:54
+msgid "Регистрация проектов завершена!"
 msgstr ""
 
-#: .\templates\index.html:127
-msgid "Отправить заявку"
+#: templates/index.html:60
+msgid "Регистрация гостей"
 msgstr ""
 
-#: .\templates\index.html:149
+#: templates/index.html:61
+msgid "Хотите посетить мероприятие в качестве гостя? Зарегистрируйтесь здесь!"
+msgstr ""
+
+#: templates/index.html:119
+msgid "Зарегистрироваться как гость"
+msgstr ""
+
+#: templates/index.html:141
 msgid ""
 "PizzaPitch — это уникальная платформа продвижения, которая объединяет "
 "основателей стартапов, предпринимателей, менторов и экспертов в одном месте "
 "для поддержки инноваций и развития бизнеса."
 msgstr ""
 
-#: .\templates\index.html:150
+#: templates/index.html:142
 msgid ""
 "Участники также могут принимать участие в тренингах и расширять свои деловые "
 "связи, находя потенциальных партнеров или инвесторов."
 msgstr ""
 
-#: .\templates\index.html:161
+#: templates/index.html:153
 #, fuzzy
 #| msgid "Мероприятия"
 msgid "Наши мероприятия"
 msgstr "Events"
 
-#: .\templates\index.html:207
+#: templates/index.html:200
 #, fuzzy
 #| msgid "Партнеры"
 msgid "Наши партнеры"
 msgstr "Partners"
 
-#: .\templates\index.html:226
+#: templates/index.html:218
 #, fuzzy
 #| msgid "Менторы"
 msgid "Наши менторы"
 msgstr "Mentors"
 
-#: .\templates\index.html:287
-msgid "Связаться с нами"
+#: templates/index.html:251
+msgid "Будьте в курсе всех новостей"
 msgstr ""
+
+#: templates/index.html:255
+msgid ""
+"Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей "
+"или свяжитесь с нами."
+msgstr ""
+
+#: templates/index.html:259
+msgid "Написать нам"
+msgstr ""
+
+#: templates/index.html:260
+msgid "Подписаться"
+msgstr ""
+
+#: templates/index.html:282
+#, fuzzy
+#| msgid "Мероприятия"
+msgid "Мероприятие началось!"
+msgstr "Events"

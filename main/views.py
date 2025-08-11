@@ -1,9 +1,9 @@
 from django.shortcuts import render
 
+from events.forms import GuestRegistrationForm, ParticipantRegistrationForm
 from events.models import Event
 from mentors.models import Mentor
 from partners.models import Partner
-from events.forms import ParticipantRegistrationForm
 
 
 def index(request):
@@ -11,4 +11,11 @@ def index(request):
     mentors = Mentor.objects.filter(show=True).order_by('name')
     partners = Partner.objects.filter(show=True).order_by('name')
     form = ParticipantRegistrationForm()
-    return render(request, 'index.html', {'active_event': active_event, 'form': form, 'mentors': mentors, 'partners': partners})
+    guest_form = GuestRegistrationForm()
+    return render(request, 'index.html', {
+        'active_event': active_event,
+        'form': form,
+        'guest_form': guest_form,
+        'mentors': mentors,
+        'partners': partners
+    })

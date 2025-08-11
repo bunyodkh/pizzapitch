@@ -12,7 +12,7 @@
     {% include 'includes/navbar.html' %}
 
     <!-- HERO -->
-    {% if active_event %} 
+    {% if active_event %}
     <section class="section with-background">
         <section class="section-content">
             <div class="hero">
@@ -22,8 +22,16 @@
                         <p>
                             {% if LANGUAGE_CODE == 'ru' %}{{ active_event.description }}{% endif %}
                             {% if LANGUAGE_CODE == 'uz' %}{{ active_event.description_uz }}{% endif %}
-                            {% if LANGUAGE_CODE == 'en' %}{{ active_event.description_en }}{% endif %}                            
+                            {% if LANGUAGE_CODE == 'en' %}{{ active_event.description_en }}{% endif %}
                         </p>
+
+                        <!-- Event Details -->
+                        <div class="event-details">
+                            <div class="event-info">
+                                <h3>{% trans 'Дата мероприятия:' %} 16 {% trans 'августа' %} 2025 {% trans 'года' %}, 09:30</h3>
+                                <p><strong>{% trans 'Адрес:' %}</strong> {% trans 'Ташкентский Финансовый Институт (ориентир станция метро Минор)' %}</p>
+                            </div>
+                        </div>
 
                         <div class="hero-details">
                             <div>
@@ -34,111 +42,85 @@
                                     <div class="seconds"><span>22</span><span>{% trans 'секунд'%}</div>
                                 </div>
 
-                                <p class="timer-message"><a href="#start-registration">{% trans 'осталось до окончания регистрации'%}</a>
-                                </p>
+                                <p class="timer-message">{% trans 'осталось до начала мероприятия'%}</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="registration-form">
-                        {% if active_event.registration_closed %}
+                        <!-- Project Registration Closed Notice -->
+                        <div class="registration-notice">
                             <ul class="messages">
-                                <li class="success">{% trans "Регистрация завершена. Спасибо за интерес!" %}</li>
+                                <li class="info">{% trans "Регистрация проектов завершена!" %}</li>
                             </ul>
-                        {% elif messages %}
-                            <ul class="messages">
-                                {% for message in messages %}
-                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                                {% endfor %}
-                            </ul>
-                        {% else %}
-                            <form class="form" action="{% url 'events:register-participant'%}" method="POST">
+                        </div>
+
+                        <!-- Guest Registration Form -->
+                        <div class="guest-registration">
+                            <h3>{% trans 'Регистрация гостей' %}</h3>
+                            <p>{% trans 'Хотите посетить мероприятие в качестве гостя? Зарегистрируйтесь здесь!' %}</p>
+
+                            {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                            <form class="form" action="{% url 'events:register-guest'%}" method="POST">
                                 {% csrf_token %}
                                 <div class="form-group">
                                     <div class="input-group">
-                                        {% if form.name.errors %}
-                                            <label>{{ form.name.errors.0 }}</label>
-                                            {{ form.name|add_class:"input-error" }}
+                                        {% if guest_form.name.errors %}
+                                            <label>{{ guest_form.name.errors.0 }}</label>
+                                            {{ guest_form.name|add_class:"input-error" }}
                                         {% else %}
-                                            <label>{{ form.name.label }}</label>
-                                            {{ form.name }} 
+                                            <label>{{ guest_form.name.label }}</label>
+                                            {{ guest_form.name }}
                                         {% endif %}
                                     </div>
 
                                     <div class="input-group">
-                                        {% if form.phone.errors %}
-                                            <label>{{ form.phone.errors.0 }}</label>
-                                            {{ form.phone|add_class:"input-error" }}
+                                        {% if guest_form.phone.errors %}
+                                            <label>{{ guest_form.phone.errors.0 }}</label>
+                                            {{ guest_form.phone|add_class:"input-error" }}
                                         {% else %}
-                                            <label>{{ form.phone.label }}</label>
-                                            {{ form.phone }} 
-                                        {% endif %}
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        {% if form.tg.errors %}
-                                            <label>{{ form.tg.errors.0 }}</label>
-                                            {{ form.tg|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.tg.label }}</label>
-                                            {{ form.tg }} 
-                                        {% endif %}
-                                    </div>
-
-                                    <div class="input-group">
-                                        {% if form.startup.errors %}
-                                            <label>{{ form.startup.errors.0 }}</label>
-                                            {{ form.startup|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.startup.label }}</label>
-                                            {{ form.startup }} 
-                                        {% endif %}
-                                    </div>
-                                </div>
-
-                                <div class="input-group">
-                                    {% if form.startup_description.errors %}
-                                        <label>{{ form.startup_description.errors.0 }}</label>
-                                        {{ form.startup_description|add_class:"input-error" }}
-                                    {% else %}
-                                        <label>{{ form.startup_description.label }}</label>
-                                        {{ form.startup_description }} 
-                                    {% endif %}
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        {% if form.presentation_link.errors %}
-                                            <label>{{ form.presentation_link.errors.0 }}</label>
-                                            {{ form.presentation_link|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.presentation_link.label }}</label>
-                                            {{ form.presentation_link }} 
+                                            <label>{{ guest_form.phone.label }}</label>
+                                            {{ guest_form.phone }}
                                         {% endif %}
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="input-group">
-                                        {% if form.consent.errors %}
-                                            <label>{{ form.consent.errors.0 }}</label>
-                                            {{ form.consent|add_class:"input-error" }}
+                                        {% if guest_form.tg.errors %}
+                                            <label>{{ guest_form.tg.errors.0 }}</label>
+                                            {{ guest_form.tg|add_class:"input-error" }}
                                         {% else %}
-                                            <label>{{ form.consent.label }}</label>
-                                            {{ form.consent }} 
+                                            <label>{{ guest_form.tg.label }}</label>
+                                            {{ guest_form.tg }}
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="input-group">
+                                        {% if guest_form.consent.errors %}
+                                            <label>{{ guest_form.consent.errors.0 }}</label>
+                                            {{ guest_form.consent|add_class:"input-error" }}
+                                        {% else %}
+                                            <label>{{ guest_form.consent.label }}</label>
+                                            {{ guest_form.consent }}
                                         {% endif %}
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <button type="submit" class="reg-button">{% trans 'Отправить заявку'%}</button>
+                                        <button type="submit" class="reg-button">{% trans 'Зарегистрироваться как гость'%}</button>
                                     </div>
                                 </div>
                             </form>
-                        {% endif %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -252,12 +234,12 @@
                                     {% if LANGUAGE_CODE == 'uz' %}{{ mentor.position_uz }}{% endif %}
                                     {% if LANGUAGE_CODE == 'en' %}{{ mentor.position_en }}{% endif %}
                                 </p>
-                            </div> 
+                            </div>
                         </li>
                         {% endfor %}
-                    </ul>    
+                    </ul>
                 </div>
-            </div>  
+            </div>
         </section>
     </section>
     {% endif %}
@@ -289,15 +271,15 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const deadlineStr = "{{ active_event.registration_deadline|date:'Y-m-d H:i:s' }}";
-            const deadline = new Date(deadlineStr.replace(' ', 'T'));
+            // Set the event start date and time: August 16, 2025, 09:30
+            const eventDate = new Date('2025-08-16T09:30:00');
 
             function updateCountdown() {
                 const now = new Date();
-                const diff = deadline - now;
+                const diff = eventDate - now;
 
                 if (diff <= 0) {
-                    document.querySelector('.countdown-timer').innerHTML = "<span>00</span> <span>00</span> <span>00</span> <span>00</span>";
+                    document.querySelector('.countdown-timer').innerHTML = "<span>{% trans 'Мероприятие началось!' %}</span>";
                     return;
                 }
 
@@ -317,13 +299,13 @@
         });
     </script>
 
-    <script defer> 
+    <script defer>
         var wrapperMenu = document.querySelector('.wrapper-menu');
         var navItems = document.querySelector('.nav-items');
         var lang = document.querySelector('.lang');
 
         wrapperMenu.addEventListener('click', function(){
-            wrapperMenu.classList.toggle('open');  
+            wrapperMenu.classList.toggle('open');
             navItems.classList.toggle('nav-open');
             lang.classList.toggle('lang-open');
         });

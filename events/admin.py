@@ -1,7 +1,8 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin
 
-from .models import EventType, Event, Participant
+from .models import Event, EventType, Guest, Participant
+
 
 @admin.register(EventType)
 class EventTypeAdmin(ModelAdmin):
@@ -17,3 +18,8 @@ class ParticipantAdmin(ModelAdmin):
     list_filter = ('event', 'selected')
     search_fields = ('name', 'email', 'phone', 'tg', 'startup')
 
+@admin.register(Guest)
+class GuestAdmin(ModelAdmin):
+    list_display = ('name', 'event', 'phone', 'tg', 'created_at')
+    list_filter = ('event', 'consent')
+    search_fields = ('name', 'phone', 'tg')
