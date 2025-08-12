@@ -499,8 +499,8 @@ msgstr "sekund"
 #: templates/index.html:45
 #, fuzzy
 #| msgid "осталось до окончания регистрации"
-msgid "осталось до начала мероприятия"
-msgstr "qoldi ro'yxatdan o'tish uchun"
+msgstr "tadbir boshlanishiga qoldi"
+
 
 #: templates/index.html:54
 msgid "Регистрация проектов завершена!"
