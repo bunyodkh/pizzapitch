@@ -481,22 +481,16 @@ msgstr ""
 "connections by finding potential partners or investors."
 
 #: .\templates\index.html:182
-#, fuzzy
-#| msgid "Мероприятия"
 msgid "Наши мероприятия"
-msgstr "Events"
+msgstr "Our Events"
 
 #: .\templates\index.html:229
-#, fuzzy
-#| msgid "Партнеры"
 msgid "Наши партнеры"
-msgstr "Partners"
+msgstr "Our Partners"
 
 #: .\templates\index.html:247
-#, fuzzy
-#| msgid "Менторы"
 msgid "Наши менторы"
-msgstr "Mentors"
+msgstr "Our Mentors"
 
 #: .\templates\index.html:280
 msgid "Будьте в курсе всех новостей"
@@ -511,8 +505,6 @@ msgstr ""
 "or contact us."
 
 #: .\templates\index.html:288
-#, fuzzy
-#| msgid "Напишите нам"
 msgid "Написать нам"
 msgstr "Contact us"
 
