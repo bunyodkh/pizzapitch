@@ -245,9 +245,7 @@ msgstr "participants"
 #| "свяжемся."
 msgid ""
 "Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся."
-msgstr ""
-"We have received your application to participate! Thank you for your "
-"interest. We will contact you."
+msgstr "We have received your application to participate! Thank you for your interest. We will contact you."
 
 #: .\mentors\models.py:6
 msgid "Введите полное имя ментора"

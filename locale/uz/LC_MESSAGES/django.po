@@ -245,8 +245,7 @@ msgstr "Qatnashuvchilar"
 #| "свяжемся."
 msgid ""
 "Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся."
-msgstr ""
-"Arizangizni qabul qildik! Qiziqishingiz uchun rahmat. Siz bilan bog'lanamiz."
+msgstr "Arizangizni qabul qildik! Qiziqishingiz uchun rahmat. Siz bilan bog'lanamiz."
 
 #: .\mentors\models.py:6
 msgid "Введите полное имя ментора"
