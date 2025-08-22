@@ -596,7 +596,7 @@ span {
     height: 100%;
     object-fit: contain;
     object-position: center;
-    transform: scale(70%);
+    transform: scale(85%);
     filter: sepia(45%);
 }
 
