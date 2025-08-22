@@ -312,7 +312,7 @@ span {
 
 .hero-details {
     position: relative;
-    margin-top: 3rem;
+    margin-top: 2rem;
     width: 100%;
     z-index: 10;
     display: flex;
@@ -340,6 +340,18 @@ span {
 
 .hero-logistic:last-child {
     margin-bottom: 0;
+}
+
+.logistics {
+    padding: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    border: 1px solid #ffe1cd;
+    margin-bottom: 2rem;
+}
+
+.logistics p {
+    font-style: italic;
 }
 
 .countdown-timer {

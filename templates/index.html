@@ -26,6 +26,22 @@
                         </p>
 
                         <div class="hero-details">
+                            <div class="logistics">
+                                <p>
+                                {% if LANGUAGE_CODE == 'ru' %}Адрес: {{ active_event.location }}{% endif %}
+                                {% if LANGUAGE_CODE == 'uz' %}Manzil: {{ active_event.location_uz }}{% endif %}
+                                {% if LANGUAGE_CODE == 'en' %}Address: {{ active_event.location_en }}{% endif %}  
+                                </p>
+
+                                <p>
+                                {% if LANGUAGE_CODE == 'ru' %}Дата: {{ active_event.date }}{% endif %}
+                                {% if LANGUAGE_CODE == 'uz' %}Sana: {{ active_event.date }}{% endif %}
+                                {% if LANGUAGE_CODE == 'en' %}Date: {{ active_event.date }}{% endif %}  
+                                </p>
+
+                                <p></p>
+                            </div>
+
                             <div>
                                 <div class="countdown-timer">
                                     <div class="days"><span>24</span><span>{% trans 'дней'%}</span></div>
