@@ -21,7 +21,7 @@ def register_participant(request):
             participant = form.save(commit=False)
             participant.event = active_event
             participant.save()
-            messages.success(request, _("registration_received"))
+            messages.success(request, "registration_received")
             return redirect(request.path)
     else:
         form = ParticipantRegistrationForm()
