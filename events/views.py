@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.utils import translation
 from django.utils.translation import gettext as _
 
 from .models import Event
 from .forms import ParticipantRegistrationForm
-
+from django.contrib.auth.decorators import login_required
 
 
 def register_participant(request):
@@ -26,3 +25,13 @@ def register_participant(request):
         'form': form,
         'active_event': active_event,
     })
+
+
+@login_required
+def show_participants(request):
+    active_event = Event.objects.filter(is_active=True).first()
+    registered_people = active_event.participant_set.all() if active_event else []
+    return render(request, 'participants.html', {
+        'registered_people': registered_people,
+        'active_event': active_event,
+    }) 

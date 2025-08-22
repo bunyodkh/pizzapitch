@@ -1,0 +1,71 @@
+{% load static %}
+{% load i18n %}
+{% load form_extras %}
+
+{% get_current_language as LANGUAGE_CODE %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% include 'includes/head.html' %}
+
+<body>
+    {% include 'includes/navbar.html' %}
+
+    <section class="section with-background">
+        <section class="section-content">
+
+            <h1 class="active-event-title">{{ active_event.title }} {{active_event.title_spot}}</h1>
+
+            <div class="active-event-info">
+                <p>Location: {{ active_event.location }}</p>
+                <p>Date: {{ active_event.date }}</p>
+                <p>Registration Deadline {{ active_event.registration_deadline }}</p>
+                <p>Number of registrations: {{ registered_people|length }}</p>
+            </div>
+
+            <h4 class="active-event-title">Registered people</h1>
+            <table class="participants">
+                <tr class="participant">
+                    <th>Selected</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Telegram</th>
+                    <th>Startup</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                    <th>Consent</th>
+                </tr>
+                {% if registered_people %}
+                    {% for rp in registered_people %}
+                        <tr class="participant">  
+                            <td>{{rp.selected}}</td>  
+                            <td>{{rp.name}}</td>
+                            <td>{{rp.phone}}</td>
+                            <td>{{rp.tg}}</td>
+                            <td>{{rp.startup}}</td>
+                            <td>{{rp.startup_description}}</td>
+                            <td><a href="{{rp.presentation_link}}" target="_blank">{{rp.presentation_link}}</a></td>
+                            <td>{{rp.consent}}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </table>
+        </section> 
+    </section>
+
+    
+
+    <script defer> 
+        var wrapperMenu = document.querySelector('.wrapper-menu');
+        var navItems = document.querySelector('.nav-items');
+        var lang = document.querySelector('.lang');
+
+        wrapperMenu.addEventListener('click', function(){
+            wrapperMenu.classList.toggle('open');  
+            navItems.classList.toggle('nav-open');
+            lang.classList.toggle('lang-open');
+        });
+    </script>
+</body>
+
+</html>

@@ -737,6 +737,40 @@ span {
 }
 
 
+/* PARTICIPANTS PAGE */
+.active-event-title {
+    padding: 2rem ;
+}
+
+.active-event-info {
+    padding: 0 2rem;
+    border: 1px solid #ffe1cd;
+    border-radius: 0.5rem;
+    background-color: #fff;
+}
+
+.participants {
+    padding: 0 2rem;
+}
+
+.participant {
+    display: flex;
+    gap: 2rem;
+}
+
+td, th {
+    width: 5rem;
+    text-align: center; /* Optional: centers the content */
+}
+
+tr {
+    border-bottom: 1px solid #ff6701;
+    padding: 1rem;
+}
+
+
+
+
 @media (max-width: 1280px) {
     .hero-title h1 {
         font-size: 5rem;
