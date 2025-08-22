@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 11:19+0500\n"
+"POT-Creation-Date: 2025-08-22 11:43+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,7 +246,8 @@ msgstr "participants"
 msgid ""
 "Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся."
 msgstr ""
-"We have received your application to participate! Thank you for your interest. We will contact you."
+"We have received your application to participate! Thank you for your "
+"interest. We will contact you."
 
 #: .\mentors\models.py:6
 msgid "Введите полное имя ментора"
@@ -400,7 +401,7 @@ msgstr "Partners"
 
 #: .\templates\404.html:12
 msgid "Страница не найдена"
-msgstr ""
+msgstr "Page not found"
 
 #: .\templates\404.html:14 .\templates\500.html:14
 #, fuzzy
@@ -410,11 +411,11 @@ msgstr "Contact us"
 
 #: .\templates\500.html:12
 msgid "Ошибка сервера"
-msgstr ""
+msgstr "Server error"
 
 #: .\templates\includes\head.html:7
-msgid "PizzaPitch - Place you want to pitch."
-msgstr ""
+msgid "PizzaPitch — место, где вы захотите представить свой стартап."
+msgstr "PizzaPitch — Place you want to pitch."
 
 #: .\templates\includes\navbar.html:12 .\templates\index.html:154
 msgid "О нас"
@@ -458,7 +459,7 @@ msgstr "left until registration closes"
 
 #: .\templates\index.html:46
 msgid "Регистрация завершена. Спасибо за интерес!"
-msgstr ""
+msgstr "Registration is closed. Thank you for your interest."
 
 #: .\templates\index.html:137
 msgid "Отправить заявку"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 11:19+0500\n"
+"POT-Creation-Date: 2025-08-22 11:43+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -413,8 +413,8 @@ msgid "Ошибка сервера"
 msgstr ""
 
 #: .\templates\includes\head.html:7
-msgid "PizzaPitch - Place you want to pitch."
-msgstr ""
+msgid "PizzaPitch — место, где вы захотите представить свой стартап."
+msgstr "PizzaPitch — startapingiz haqida taqdimot qilish uchun eng yaxshi joy!"
 
 #: .\templates\includes\navbar.html:12 .\templates\index.html:154
 msgid "О нас"
