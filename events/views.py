@@ -18,7 +18,7 @@ def register_participant(request):
             participant = form.save(commit=False)
             participant.event = active_event
             participant.save()
-            messages.success(request, _("Мы получили вашу заявка на участие! Спасибо за интерес. Мы с вами свяжемся."))
+            messages.success(request, _("Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся."))
             return redirect(request.path)
     else:
         form = ParticipantRegistrationForm()

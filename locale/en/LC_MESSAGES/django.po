@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 11:12+0500\n"
+"POT-Creation-Date: 2025-08-22 11:19+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -239,11 +239,14 @@ msgid "Участники"
 msgstr "participants"
 
 #: .\events\views.py:21
+#, fuzzy
+#| msgid ""
+#| "Мы получили вашу заявка на участие! Спасибо за интерес. Мы с вами "
+#| "свяжемся."
 msgid ""
-"Мы получили вашу заявка на участие! Спасибо за интерес. Мы с вами свяжемся."
+"Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся."
 msgstr ""
-"We have received your application to participate! Thank you for your "
-"interest. We will contact you."
+"We have received your application to participate! Thank you for your interest. We will contact you."
 
 #: .\mentors\models.py:6
 msgid "Введите полное имя ментора"
@@ -505,7 +508,9 @@ msgstr "Stay up to date on all the news."
 msgid ""
 "Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей "
 "или свяжитесь с нами."
-msgstr "Subscribe to our Telegram channel to stay up to date on all the latest news, or contact us."
+msgstr ""
+"Subscribe to our Telegram channel to stay up to date on all the latest news, "
+"or contact us."
 
 #: .\templates\index.html:277
 #, fuzzy

@@ -56,7 +56,7 @@ class Event(models.Model):
         verbose_name_plural = _("Мероприятия")
 
     def __str__(self):
-        return self.title
+        return f'{self.title}{self.title_spot}'
     
     def save(self, *args, **kwargs):
         if self.registration_deadline and self.registration_deadline < timezone.now():
