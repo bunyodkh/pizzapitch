@@ -9,10 +9,12 @@
 <body>
     {% include 'includes/navbar.html' %}
 
-    <h1>404 - {% trans 'Страница не найдена'%}</h1>
-
-    <a href="{% url 'main:index'%}">{% trans 'Вернуться назад' %}</a>
-
+    <section class="section">
+        <section class="section-content">
+            <h1>404 - {% trans 'Страница не найдена'%}</h1>
+            <a href="{% url 'main:index'%}">{% trans 'Вернуться назад' %}</a>
+        </section>
+    </section>
 </body>
 
 </html>

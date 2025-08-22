@@ -9,9 +9,12 @@
 <body>
     {% include 'includes/navbar.html' %}
 
-    <h1>500 - {% trans 'Ошибка сервера'%}</h1>
-
-    <a href="{% url 'main:index'%}">{% trans 'Вернуться назад' %}</a>
+    <section class="section">
+        <section class="section-content">
+            <h1>500 - {% trans 'Ошибка сервера'%}</h1>
+            <a href="{% url 'main:index'%}">{% trans 'Вернуться назад' %}</a>
+        </section>
+    </section>
 
 </body>
 
