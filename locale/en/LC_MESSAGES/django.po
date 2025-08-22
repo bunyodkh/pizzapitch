@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 11:43+0500\n"
+"POT-Creation-Date: 2025-08-22 13:27+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,15 +238,6 @@ msgstr "Participant"
 msgid "Участники"
 msgstr "participants"
 
-#: .\events\views.py:21
-#, fuzzy
-#| msgid ""
-#| "Мы получили вашу заявка на участие! Спасибо за интерес. Мы с вами "
-#| "свяжемся."
-msgid ""
-"Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся."
-msgstr "We have received your application to participate! Thank you for your interest. We will contact you."
-
 #: .\mentors\models.py:6
 msgid "Введите полное имя ментора"
 msgstr ""
@@ -415,7 +406,7 @@ msgstr "Server error"
 msgid "PizzaPitch — место, где вы захотите представить свой стартап."
 msgstr "PizzaPitch — Place you want to pitch."
 
-#: .\templates\includes\navbar.html:12 .\templates\index.html:154
+#: .\templates\includes\navbar.html:12 .\templates\index.html:165
 msgid "О нас"
 msgstr "About Us"
 
@@ -459,11 +450,19 @@ msgstr "left until registration closes"
 msgid "Регистрация завершена. Спасибо за интерес!"
 msgstr "Registration is closed. Thank you for your interest."
 
-#: .\templates\index.html:137
+#: .\templates\index.html:58
+#, fuzzy
+#| msgid ""
+#| "Мы получили вашу заявка на участие! Спасибо за интерес. Мы с вами "
+#| "свяжемся."
+msgid "Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся."
+msgstr "We have received your application to participate! Thank you for your interest. We will contact you."
+
+#: .\templates\index.html:148
 msgid "Отправить заявку"
 msgstr "Submit an application"
 
-#: .\templates\index.html:159
+#: .\templates\index.html:170
 msgid ""
 "PizzaPitch — это уникальная платформа продвижения, которая объединяет "
 "основателей стартапов, предпринимателей, менторов и экспертов в одном месте "
@@ -473,7 +472,7 @@ msgstr ""
 "founders, entrepreneurs, mentors, and experts in one place to support "
 "innovation and business development."
 
-#: .\templates\index.html:160
+#: .\templates\index.html:171
 msgid ""
 "Участники также могут принимать участие в тренингах и расширять свои деловые "
 "связи, находя потенциальных партнеров или инвесторов."
@@ -481,29 +480,29 @@ msgstr ""
 "Participants can also take part in trainings and expand their business "
 "connections by finding potential partners or investors."
 
-#: .\templates\index.html:171
+#: .\templates\index.html:182
 #, fuzzy
 #| msgid "Мероприятия"
 msgid "Наши мероприятия"
 msgstr "Events"
 
-#: .\templates\index.html:218
+#: .\templates\index.html:229
 #, fuzzy
 #| msgid "Партнеры"
 msgid "Наши партнеры"
 msgstr "Partners"
 
-#: .\templates\index.html:236
+#: .\templates\index.html:247
 #, fuzzy
 #| msgid "Менторы"
 msgid "Наши менторы"
 msgstr "Mentors"
 
-#: .\templates\index.html:269
+#: .\templates\index.html:280
 msgid "Будьте в курсе всех новостей"
 msgstr "Stay up to date on all the news."
 
-#: .\templates\index.html:273
+#: .\templates\index.html:284
 msgid ""
 "Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей "
 "или свяжитесь с нами."
@@ -511,12 +510,12 @@ msgstr ""
 "Subscribe to our Telegram channel to stay up to date on all the latest news, "
 "or contact us."
 
-#: .\templates\index.html:277
+#: .\templates\index.html:288
 #, fuzzy
 #| msgid "Напишите нам"
 msgid "Написать нам"
 msgstr "Contact us"
 
-#: .\templates\index.html:278
+#: .\templates\index.html:289
 msgid "Подписаться"
 msgstr "Subscribe"

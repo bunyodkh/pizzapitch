@@ -11,9 +11,6 @@ from .forms import ParticipantRegistrationForm
 def register_participant(request):
     active_event = Event.objects.filter(is_active=True).first()
 
-    user_language = request.LANGUAGE_CODE  
-    translation.activate(user_language)
-
     if request.method == 'POST':
         form = ParticipantRegistrationForm(request.POST)
 
@@ -21,7 +18,7 @@ def register_participant(request):
             participant = form.save(commit=False)
             participant.event = active_event
             participant.save()
-            messages.success(request, "registration_received")
+            messages.success(request, "success")
             return redirect(request.path)
     else:
         form = ParticipantRegistrationForm()

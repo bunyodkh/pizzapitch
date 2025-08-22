@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 11:43+0500\n"
+"POT-Creation-Date: 2025-08-22 13:27+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,15 +238,6 @@ msgstr "Qatnashuvchi"
 msgid "Участники"
 msgstr "Qatnashuvchilar"
 
-#: .\events\views.py:21
-#, fuzzy
-#| msgid ""
-#| "Мы получили вашу заявка на участие! Спасибо за интерес. Мы с вами "
-#| "свяжемся."
-msgid ""
-"Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся."
-msgstr "Arizangizni qabul qildik! Qiziqishingiz uchun rahmat. Siz bilan bog'lanamiz."
-
 #: .\mentors\models.py:6
 msgid "Введите полное имя ментора"
 msgstr ""
@@ -415,7 +406,7 @@ msgstr ""
 msgid "PizzaPitch — место, где вы захотите представить свой стартап."
 msgstr "PizzaPitch — startapingiz haqida taqdimot qilish uchun eng yaxshi joy!"
 
-#: .\templates\includes\navbar.html:12 .\templates\index.html:154
+#: .\templates\includes\navbar.html:12 .\templates\index.html:165
 msgid "О нас"
 msgstr "Biz haqimizda"
 
@@ -459,11 +450,19 @@ msgstr "qoldi ro'yxatdan o'tish uchun"
 msgid "Регистрация завершена. Спасибо за интерес!"
 msgstr ""
 
-#: .\templates\index.html:137
+#: .\templates\index.html:58
+#, fuzzy
+#| msgid ""
+#| "Мы получили вашу заявка на участие! Спасибо за интерес. Мы с вами "
+#| "свяжемся."
+msgid "Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся."
+msgstr "Arizangizni qabul qildik! Qiziqishingiz uchun rahmat. Siz bilan bog'lanamiz."
+
+#: .\templates\index.html:148
 msgid "Отправить заявку"
 msgstr "Ro'yxatdan o'tish"
 
-#: .\templates\index.html:159
+#: .\templates\index.html:170
 msgid ""
 "PizzaPitch — это уникальная платформа продвижения, которая объединяет "
 "основателей стартапов, предпринимателей, менторов и экспертов в одном месте "
@@ -473,7 +472,7 @@ msgstr ""
 "startap asoschilari, tadbirkorlar, mentorlar va ekspertlarni bir maskanda "
 "jamlovchi noyob platforma."
 
-#: .\templates\index.html:160
+#: .\templates\index.html:171
 msgid ""
 "Участники также могут принимать участие в тренингах и расширять свои деловые "
 "связи, находя потенциальных партнеров или инвесторов."
@@ -482,23 +481,23 @@ msgstr ""
 "investorlarni topish hisobiga o‘z biznes aloqalarini rivojlantirish "
 "imkoniyatiga ega bo‘lishadi."
 
-#: .\templates\index.html:171
+#: .\templates\index.html:182
 msgid "Наши мероприятия"
 msgstr "Bizning tadbirlar"
 
-#: .\templates\index.html:218
+#: .\templates\index.html:229
 msgid "Наши партнеры"
 msgstr "Bizning hamkorlar"
 
-#: .\templates\index.html:236
+#: .\templates\index.html:247
 msgid "Наши менторы"
 msgstr "Bizning mentorlar"
 
-#: .\templates\index.html:269
+#: .\templates\index.html:280
 msgid "Будьте в курсе всех новостей"
 msgstr "Barcha yangiliklardan xabardor bo'ling."
 
-#: .\templates\index.html:273
+#: .\templates\index.html:284
 msgid ""
 "Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей "
 "или свяжитесь с нами."
@@ -506,12 +505,12 @@ msgstr ""
 "Telegram kanalimizga obuna bo'ling va barcha dolzarb yangiliklardan xabardor "
 "bo'ling yoki biz bilan bog'laning."
 
-#: .\templates\index.html:277
+#: .\templates\index.html:288
 #, fuzzy
 #| msgid "Напишите нам"
 msgid "Написать нам"
 msgstr "Biz bilan bog'laning"
 
-#: .\templates\index.html:278
+#: .\templates\index.html:289
 msgid "Подписаться"
 msgstr "Obuna bo'lish"
