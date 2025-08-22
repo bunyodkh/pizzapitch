@@ -47,8 +47,17 @@
                             </ul>
                         {% elif messages %}
                             <ul class="messages">
-                                {% for message in messages %}
+                                <!-- {% for message in messages %}
                                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                {% endfor %} -->
+                                {% for message in messages %}
+                                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                        {% if message == "registration_received" %}
+                                            {% trans "Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся." %}
+                                        {% else %}
+                                            {{ message }}
+                                        {% endif %}
+                                    </li>
                                 {% endfor %}
                             </ul>
                         {% else %}
