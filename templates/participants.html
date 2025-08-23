@@ -11,45 +11,38 @@
 <body>
     {% include 'includes/navbar.html' %}
 
-    <section class="section with-background">
+    <section class="section">
         <section class="section-content">
 
             <h1 class="active-event-title">{{ active_event.title }} {{active_event.title_spot}}</h1>
 
             <div class="active-event-info">
-                <p>Location: {{ active_event.location }}</p>
-                <p>Date: {{ active_event.date }}</p>
-                <p>Registration Deadline {{ active_event.registration_deadline }}</p>
-                <p>Number of registrations: {{ registered_people|length }}</p>
+                <div>
+                    <p>Location: {{ active_event.location }}</p>
+                    <p>Date: {{ active_event.date }}</p>
+                    <p>Registration Deadline {{ active_event.registration_deadline }}</p>
+                    <p>Number of registrations: {{ registered_people|length }}</p>
+                </div>
             </div>
 
-            <h4 class="active-event-title">Registered people</h1>
-            <table class="participants">
-                <tr class="participant">
-                    <th>Selected</th>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Telegram</th>
-                    <th>Startup</th>
-                    <th>Description</th>
-                    <th>Link</th>
-                    <th>Consent</th>
-                </tr>
+            <h4 class="active-event-title">Registered participants</h1>
+
+            <div class="participants">
                 {% if registered_people %}
+                <ul>
                     {% for rp in registered_people %}
-                        <tr class="participant">  
-                            <td>{{rp.selected}}</td>  
-                            <td>{{rp.name}}</td>
-                            <td>{{rp.phone}}</td>
-                            <td>{{rp.tg}}</td>
-                            <td>{{rp.startup}}</td>
-                            <td>{{rp.startup_description}}</td>
-                            <td><a href="{{rp.presentation_link}}" target="_blank">{{rp.presentation_link}}</a></td>
-                            <td>{{rp.consent}}</td>
-                        </tr>
+                    <li class="participant">
+                        <h4 class="participant-startup"><a href="{{ rp.presentation_link }}" target="_blank">{{ rp.startup }}</a></h4>
+                        <p class="participant-startup-description">{{rp.startup_description}}</p>
+                        <p class="participant-name">Founder: {{ rp.name }}</p>
+                        <p class="participant-phone">Phone: {{ rp.phone }}</p>
+                        <p class="participant-telegram">Telegram: {{ rp.tg }}</p>
+                        <p class="participant-consent">Consent: {{ rp.consent }}</p>
+                    </li>
                     {% endfor %}
+                </ul>
                 {% endif %}
-            </table>
+            </div>
         </section> 
     </section>
 

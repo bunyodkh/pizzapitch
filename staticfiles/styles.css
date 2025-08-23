@@ -770,31 +770,63 @@ span {
 
 .active-event-info {
     padding: 0 2rem;
+}
+
+.active-event-info div {
+    padding: 1rem;
     border: 1px solid #ffe1cd;
     border-radius: 0.5rem;
     background-color: #fff;
+    width: fit-content;
+}
+
+.active-event-info div p {
+    font-style: italic;
+    font-size: 0.8rem;
 }
 
 .participants {
     padding: 0 2rem;
 }
 
-.participant {
+.participants ul {
     display: flex;
     gap: 2rem;
 }
 
-td, th {
-    width: 5rem;
-    text-align: center; /* Optional: centers the content */
-}
-
-tr {
-    border-bottom: 1px solid #ff6701;
+.participant {
+    width: 30%;
+    border: 1px solid #ffe1cd;
+    border-radius: 0.5rem;
+    background-color: #fff;
     padding: 1rem;
 }
 
+.participant-startup {
+    font-weight: 700;
+    font-size: 1rem;
+}
 
+.participant-startup a {
+    border-bottom: 1px solid #ccc;
+}
+
+.participant-startup a:hover {
+    border-bottom: 1px solid #000;
+}
+
+.participant-startup-description {
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+}
+
+.participant-name,
+.participant-phone,
+.participant-telegram,
+.participant-consent {
+    font-size: 0.7rem;
+    font-style: italic;
+}
 
 
 @media (max-width: 1280px) {
@@ -924,6 +956,10 @@ tr {
 }
 
 @media (max-width: 800px) {
+    .participant {
+        width: 100%;
+    }
+    
     .socials {
         width: 45%;
     }
