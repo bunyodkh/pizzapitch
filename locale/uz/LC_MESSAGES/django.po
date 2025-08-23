@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 19:51+0500\n"
+"POT-Creation-Date: 2025-08-23 18:24+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -406,7 +406,7 @@ msgstr "Server hatosi"
 msgid "PizzaPitch — место, где вы захотите представить свой стартап."
 msgstr "PizzaPitch — startapingiz haqida taqdimot qilish uchun eng yaxshi joy!"
 
-#: .\templates\includes\navbar.html:12 .\templates\index.html:174
+#: .\templates\includes\navbar.html:12 .\templates\index.html:188
 msgid "О нас"
 msgstr "Biz haqimizda"
 
@@ -426,35 +426,35 @@ msgstr "O'zb"
 msgid "Англ"
 msgstr "Ing"
 
-#: .\templates\index.html:47
+#: .\templates\index.html:61
 msgid "дней"
 msgstr "kun"
 
-#: .\templates\index.html:48
+#: .\templates\index.html:62
 msgid "часов"
 msgstr "soat"
 
-#: .\templates\index.html:49
+#: .\templates\index.html:63
 msgid "минут"
 msgstr "minut"
 
-#: .\templates\index.html:50
+#: .\templates\index.html:64
 msgid "секунд"
 msgstr "sekund"
 
-#: .\templates\index.html:53
+#: .\templates\index.html:67
 msgid "осталось до окончания регистрации"
 msgstr "qoldi ro'yxatdan o'tish uchun"
 
-#: .\templates\index.html:62
+#: .\templates\index.html:76
 msgid "Регистрация завершена. Спасибо за интерес!"
 msgstr "Ro'yxatga olish tugadi"
 
-#: .\templates\index.html:157
+#: .\templates\index.html:171
 msgid "Отправить заявку"
 msgstr "Ro'yxatdan o'tish"
 
-#: .\templates\index.html:179
+#: .\templates\index.html:193
 msgid ""
 "PizzaPitch — это уникальная платформа продвижения, которая объединяет "
 "основателей стартапов, предпринимателей, менторов и экспертов в одном месте "
@@ -464,7 +464,7 @@ msgstr ""
 "startap asoschilari, tadbirkorlar, mentorlar va ekspertlarni bir maskanda "
 "jamlovchi noyob platforma."
 
-#: .\templates\index.html:180
+#: .\templates\index.html:194
 msgid ""
 "Участники также могут принимать участие в тренингах и расширять свои деловые "
 "связи, находя потенциальных партнеров или инвесторов."
@@ -473,23 +473,23 @@ msgstr ""
 "investorlarni topish hisobiga o‘z biznes aloqalarini rivojlantirish "
 "imkoniyatiga ega bo‘lishadi."
 
-#: .\templates\index.html:191
+#: .\templates\index.html:205
 msgid "Наши мероприятия"
 msgstr "Bizning tadbirlar"
 
-#: .\templates\index.html:238
+#: .\templates\index.html:252
 msgid "Наши партнеры"
 msgstr "Bizning hamkorlar"
 
-#: .\templates\index.html:256
+#: .\templates\index.html:270
 msgid "Наши менторы"
 msgstr "Bizning mentorlar"
 
-#: .\templates\index.html:289
+#: .\templates\index.html:303
 msgid "Будьте в курсе всех новостей"
 msgstr "Barcha yangiliklardan xabardor bo'ling."
 
-#: .\templates\index.html:293
+#: .\templates\index.html:307
 msgid ""
 "Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей "
 "или свяжитесь с нами."
@@ -497,13 +497,22 @@ msgstr ""
 "Telegram kanalimizga obuna bo'ling va barcha dolzarb yangiliklardan xabardor "
 "bo'ling yoki biz bilan bog'laning."
 
-#: .\templates\index.html:297
+#: .\templates\index.html:311
 msgid "Написать нам"
 msgstr "Biz bilan bog'laning"
 
-#: .\templates\index.html:298
+#: .\templates\index.html:312
 msgid "Подписаться"
 msgstr "Obuna bo'lish"
+
+#: .\templates\index.html:316
+msgid ""
+"Платформа PizzaPitch реализуется при технической и программной поддержке"
+msgstr "PizzaPitch platformasi O'zbekistondagi"
+
+#: .\templates\index.html:316
+msgid "ПРООН Узбекистан"
+msgstr "BMT Taraqqiyot Dasturining amaliy ko'magi asosida amalga oshiriladi."
 
 #, fuzzy
 #~| msgid ""

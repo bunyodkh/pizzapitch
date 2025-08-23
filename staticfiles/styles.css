@@ -749,6 +749,19 @@ span {
     object-position: center;
 }
 
+.support-org {
+    padding-top: 2rem;
+}
+
+.support-org p {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.support-org p a {
+    border-bottom: 1px solid #ccc;
+}
+
 
 /* PARTICIPANTS PAGE */
 .active-event-title {
