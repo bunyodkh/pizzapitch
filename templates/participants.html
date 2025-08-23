@@ -25,7 +25,9 @@
                 </div>
             </div>
 
-            <h4 class="active-event-title">Registered participants</h1>
+            <h4 class="active-event-title">Registered participants <a class="export-link" href="{% url 'events:export-participants-excel' %}">Export Participants to Excel</a></h4>
+
+            
 
             <div class="participants">
                 {% if registered_people %}
