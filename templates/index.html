@@ -55,7 +55,7 @@
 
                                 <p></p>
                             </div>
-
+                            {% if not active_event.registration_closed %}
                             <div>
                                 <div class="countdown-timer">
                                     <div class="days"><span>24</span><span>{% trans 'дней'%}</span></div>
@@ -67,15 +67,12 @@
                                 <p class="timer-message"><a href="#start-registration">{% trans 'осталось до окончания регистрации'%}</a>
                                 </p>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
 
                     <div class="registration-form">
-                        {% if active_event.registration_closed %}
-                            <ul class="messages">
-                                <li class="success">{% trans "Регистрация завершена. Спасибо за интерес!" %}</li>
-                            </ul>
-                        {% elif messages %}
+                        {% if active_event.guest_registration and active_event.registration_closed and messages %}
                             <ul class="messages">
                                 {% for message in messages %}
                                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> 
@@ -85,9 +82,90 @@
                                 </li>
                                 {% endfor %}
                             </ul>
-                        {% else %}
+                        {% endif %}
+                        
+                        {% if active_event.guest_registration and active_event.registration_closed and not messages %}
                             <form class="form" action="{% url 'events:register-participant'%}" method="POST">
                                 {% csrf_token %}
+
+                                <p class="guest-registration-heading">{% trans "Чтобы принять участие в мероприятии в качестве гостя, пожалуйста, заполните следующую форму" %}</p>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        {% if form.name.errors %}
+                                            <label>{{ form.name.errors.0 }}</label>
+                                            {{ form.name|add_class:"input-error" }}
+                                        {% else %}
+                                            <label>{{ form.name.label }}</label>
+                                            {{ form.name }} 
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="input-group">
+                                        {% if form.phone.errors %}
+                                            <label>{{ form.phone.errors.0 }}</label>
+                                            {{ form.phone|add_class:"input-error" }}
+                                        {% else %}
+                                            <label>{{ form.phone.label }}</label>
+                                            {{ form.phone }} 
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        {% if form.tg.errors %}
+                                            <label>{{ form.tg.errors.0 }}</label>
+                                            {{ form.tg|add_class:"input-error" }}
+                                        {% else %}
+                                            <label>{{ form.tg.label }}</label>
+                                            {{ form.tg }} 
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        {% if form.guest_consent.errors %}
+                                            <label>{{ form.guest_consent.errors.0 }}</label>
+                                            {{ form.guest_consent|add_class:"input-error" }}
+                                        {% else %}
+                                            <label>{{ form.guest_consent.label }}</label>
+                                            {{ form.guest_consent }} 
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <button type="submit" class="reg-button">{% trans 'Принять участие'%}</button>
+                                    </div>
+                                </div>
+                            </form>
+                        {% endif %}
+
+                        {% if active_event.registration_closed and not active_event.guest_registration %}
+                            <ul class="messages">
+                                <li class="success">{% trans "Регистрация завершена. Спасибо за интерес!" %}</li>
+                            </ul>
+                        {% endif %}
+                        
+                        {% if not active_event.registration_closed and not active_event.guest_registration and messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> 
+                                    {% if LANGUAGE_CODE == 'ru' %}Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся.{% endif %}
+                                    {% if LANGUAGE_CODE == 'uz' %}Arizangizni qabul qildik! Qiziqishingiz uchun rahmat. Siz bilan bog'lanamiz.{% endif %}
+                                    {% if LANGUAGE_CODE == 'en' %}We have received your application to participate! Thank you for your interest. We will contact you.{% endif %}     
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+
+                        {% if not active_event.registration_closed and not active_event.guest_registration %}
+                            <form class="form" action="{% url 'events:register-participant'%}" method="POST">
+                                {% csrf_token %}
+
                                 <div class="form-group">
                                     <div class="input-group">
                                         {% if form.name.errors %}
@@ -156,12 +234,12 @@
 
                                 <div class="form-group">
                                     <div class="input-group">
-                                        {% if form.consent.errors %}
-                                            <label>{{ form.consent.errors.0 }}</label>
-                                            {{ form.consent|add_class:"input-error" }}
+                                        {% if form.participants_consent.errors %}
+                                            <label>{{ form.participants_consent.errors.0 }}</label>
+                                            {{ form.participants_consent|add_class:"input-error" }}
                                         {% else %}
-                                            <label>{{ form.consent.label }}</label>
-                                            {{ form.consent }} 
+                                            <label>{{ form.participants_consent.label }}</label>
+                                            {{ form.participants_consent }} 
                                         {% endif %}
                                     </div>
                                 </div>
@@ -324,36 +402,37 @@
         </section>
     </section>
 
+    {% if not active_event.registration_closed %}
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const deadlineStr = "{{ active_event.registration_deadline|date:'Y-m-d H:i:s' }}";
+                const deadline = new Date(deadlineStr.replace(' ', 'T'));
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const deadlineStr = "{{ active_event.registration_deadline|date:'Y-m-d H:i:s' }}";
-            const deadline = new Date(deadlineStr.replace(' ', 'T'));
+                function updateCountdown() {
+                    const now = new Date();
+                    const diff = deadline - now;
 
-            function updateCountdown() {
-                const now = new Date();
-                const diff = deadline - now;
+                    if (diff <= 0) {
+                        document.querySelector('.countdown-timer').innerHTML = "<span>00</span> <span>00</span> <span>00</span> <span>00</span>";
+                        return;
+                    }
 
-                if (diff <= 0) {
-                    document.querySelector('.countdown-timer').innerHTML = "<span>00</span> <span>00</span> <span>00</span> <span>00</span>";
-                    return;
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                    const seconds = Math.floor((diff / 1000) % 60);
+
+                    document.querySelector('.countdown-timer .days span').textContent = days.toString().padStart(2, '0');
+                    document.querySelector('.countdown-timer .hours span').textContent = hours.toString().padStart(2, '0');
+                    document.querySelector('.countdown-timer .minutes span').textContent = minutes.toString().padStart(2, '0');
+                    document.querySelector('.countdown-timer .seconds span').textContent = seconds.toString().padStart(2, '0');
                 }
 
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                const minutes = Math.floor((diff / (1000 * 60)) % 60);
-                const seconds = Math.floor((diff / 1000) % 60);
-
-                document.querySelector('.countdown-timer .days span').textContent = days.toString().padStart(2, '0');
-                document.querySelector('.countdown-timer .hours span').textContent = hours.toString().padStart(2, '0');
-                document.querySelector('.countdown-timer .minutes span').textContent = minutes.toString().padStart(2, '0');
-                document.querySelector('.countdown-timer .seconds span').textContent = seconds.toString().padStart(2, '0');
-            }
-
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-        });
-    </script>
+                updateCountdown();
+                setInterval(updateCountdown, 1000);
+            });
+        </script>
+    {% endif %}
 
     <script defer> 
         var wrapperMenu = document.querySelector('.wrapper-menu');

@@ -6,15 +6,40 @@ import openpyxl
 from django.http import HttpResponse
 
 from .models import Event
-from .forms import ParticipantRegistrationForm
+from .forms import ParticipantRegistrationForm, GuestRegistrationForm
 from django.contrib.auth.decorators import login_required
+
+
+# def register_participant(request):
+#     active_event = Event.objects.filter(is_active=True).first()
+
+#     if request.method == 'POST':
+#         form = ParticipantRegistrationForm(request.POST)
+
+#         if form.is_valid():
+#             participant = form.save(commit=False)
+#             participant.event = active_event
+#             participant.save()
+#             messages.success(request, "success")
+#             return redirect(request.path)
+#     else:
+#         form = ParticipantRegistrationForm()
+#     return render(request, 'index.html', {
+#         'form': form,
+#         'active_event': active_event,
+#     })
 
 
 def register_participant(request):
     active_event = Event.objects.filter(is_active=True).first()
 
+    print(active_event.guest_registration)
+
     if request.method == 'POST':
-        form = ParticipantRegistrationForm(request.POST)
+        if active_event.guest_registration and active_event.registration_closed:
+            form = GuestRegistrationForm(request.POST)
+        elif not active_event.registration_closed:
+            form = ParticipantRegistrationForm(request.POST)
 
         if form.is_valid():
             participant = form.save(commit=False)
@@ -23,10 +48,14 @@ def register_participant(request):
             messages.success(request, "success")
             return redirect(request.path)
     else:
-        form = ParticipantRegistrationForm()
+        if active_event.guest_registration and active_event.registration_closed:
+            form = GuestRegistrationForm()
+        elif not active_event.registration_closed:
+            form = ParticipantRegistrationForm()
     return render(request, 'index.html', {
         'form': form,
         'active_event': active_event,
+        'guest_registration': active_event.guest_registration,
     })
 
 

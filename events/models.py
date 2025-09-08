@@ -48,6 +48,8 @@ class Event(models.Model):
     is_active = models.BooleanField(default=True, verbose_name=_("Активно"))
     registration_closed = models.BooleanField(default=False, verbose_name=_("Регистрация закрыта"))
 
+    guest_registration = models.BooleanField(default=False, verbose_name=_("Регистрация гостей"))
+
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Дата создания"))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_("Дата обновления"))
 
@@ -56,7 +58,7 @@ class Event(models.Model):
         verbose_name_plural = _("Мероприятия")
 
     def __str__(self):
-        return f'{self.title}{self.title_spot}'
+        return f'{self.title} {self.title_spot} ({self.date.strftime("%Y-%m-%d %H:%M")})'
     
     def save(self, *args, **kwargs):
         if self.registration_deadline and self.registration_deadline < timezone.now():
@@ -83,7 +85,7 @@ class Participant(models.Model):
         ('no', _("Нет")),
     ]
 
-    consent = models.CharField(
+    participants_consent = models.CharField(
         max_length=5,
         choices=CONSENT_CHOICES,
         default='no',
@@ -99,6 +101,40 @@ class Participant(models.Model):
     class Meta:
         verbose_name = _("Участник")
         verbose_name_plural = _("Участники")
+
+    def __str__(self):
+        return self.name
+    
+
+
+class Guest(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name=_("Мероприятие"))
+    
+    name = models.CharField(max_length=200, verbose_name=_("Имя"), blank=True, null=True)
+    phone = models.CharField(max_length=15, verbose_name=_("Телефон"), blank=True, null=True)
+    tg = models.CharField(max_length=15, verbose_name=_("Телеграм"), blank=True, null=True)
+
+    CONSENT_CHOICES = [
+        ('yes', _("Да")),
+        ('no', _("Нет")),
+    ]
+
+    guest_consent = models.CharField(
+        max_length=5,
+        choices=CONSENT_CHOICES,
+        default='no',
+        verbose_name=_("Согласие на обработку персональных данных")
+    )
+
+    selected = models.BooleanField(default=False, verbose_name=_("Выбран"))
+
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Дата создания"))
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=_("Дата обновления"))
+
+
+    class Meta:
+        verbose_name = _("Гость")
+        verbose_name_plural = _("Гости")
 
     def __str__(self):
         return self.name
