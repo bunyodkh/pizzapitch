@@ -846,6 +846,59 @@ span {
     font-size: 1.5rem;
 }
 
+.promo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.promo-image > img {
+    width: 100%;
+}
+
+.promo-image,
+.event-agenda {
+    width: 48%;
+}
+
+.promo-image {
+    padding: 1rem;
+}
+
+.event-agenda > h3 {
+    font-weight: 700;
+    color: #ff6701;
+    margin-bottom: 2rem;
+}
+
+.event-agenda {
+    padding: 1rem;
+}
+
+.agenda-details {
+    padding: 1rem 1rem 0 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    border: 1px solid #ff6701;
+}
+
+
+.agenda-detail {
+    display: flex;
+    border-bottom: 1px solid #e2e2e2;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    padding-bottom: 0.5rem;
+}
+
+.agenda-detail:last-child {
+    border: none;
+}
+
+.detail-time {
+    margin-right: 2rem;
+}
 
 @media (max-width: 1280px) {
     .hero-title h1 {
@@ -1005,6 +1058,35 @@ span {
 
     .qr {
         width: 45%;
+    }
+
+    
+    .promo-image,
+    .event-agenda {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .promo {
+        padding: 0.5rem;
+    }
+
+    .agenda-detail {
+        gap: 1rem;
+    }
+
+    .detail-time {
+        width: 25%;
+        margin-right: 0;
+    }
+
+    .detail-title {
+        width: 75%;
+    }
+
+    .event-agenda > h3 {
+        margin-bottom: 1rem;
+        text-align: center;
     }
 }
 

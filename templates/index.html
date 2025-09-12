@@ -26,6 +26,71 @@
     {% include 'includes/navbar.html' %}
 
     <!-- HERO -->
+    <section class="section with-background">
+        <section class="section-content">
+            <div class="promo">
+                <div class="promo-image">
+                    <img src="{% static 'images/promo.jpg' %}" alt="Promo Image">
+                </div>
+
+                <div class="event-agenda">
+                    <h3>{% trans 'Программа мероприятия'%}</h3>
+                    <ul class="agenda-details">
+                        <li class="agenda-detail">
+                            <div class="detail-time">09:00 - 10:30</div>
+                            <div class="detail-title">{% trans 'Регистрация участников и открытие'%} </div>
+                        </li>
+
+                        <li class="agenda-detail">
+                            <div class="detail-time">10:30 - 12:30</div>
+                            <div class="detail-title">{% trans 'Отбор проектов / квалификация (в комнатах)'%}</div>
+                        </li>
+
+                        <li class="agenda-detail">
+                            <div class="detail-time">10:30 - 11:30</div>
+                            <div class="detail-title">{% trans 'Лекция от эксперта (общий зал)'%}</div>
+                        </li>
+
+                        <li class="agenda-detail">
+                            <div class="detail-time">11:30 - 12:30</div>
+                            <div class="detail-title">{% trans 'Kahoot конкурс (общий зал)'%}</div>
+                        </li>
+
+                        <li class="agenda-detail">
+                            <div class="detail-time">12:30 - 13:20</div>
+                            <div class="detail-title">{% trans 'Обсуждение жюри / Обед'%}</div>
+                        </li>
+
+                        <li class="agenda-detail">
+                            <div class="detail-time">13:20 - 13:30</div>
+                            <div class="detail-title">{% trans 'Сессия от эксперта U-Enter'%}</div>
+                        </li>
+
+                        <li class="agenda-detail">
+                            <div class="detail-time">13:30 - 13:40</div>
+                            <div class="detail-title">{% trans 'Объявление финалистов'%}</div>
+                        </li>
+
+                        <li class="agenda-detail">
+                            <div class="detail-time">13:40 - 15:40</div>
+                            <div class="detail-title">{% trans 'Финальный этап'%}</div>
+                        </li>
+
+                        <li class="agenda-detail">
+                            <div class="detail-time">15:40 - 15:50</div>
+                            <div class="detail-title">{% trans 'Обсуждение жюри / Конкурс для участников'%}</div>
+                        </li>
+
+                        <li class="agenda-detail">
+                            <div class="detail-time">15:50 - 16:00</div>
+                            <div class="detail-title">{% trans 'Объявление и награждение победителей'%}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+
     {% if active_event %} 
     <section class="section with-background">
         <section class="section-content">

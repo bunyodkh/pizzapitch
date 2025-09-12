@@ -90,7 +90,6 @@ def export_participants_to_excel(request):
             participant.startup,
             participant.startup_description,
             participant.presentation_link,
-            participant.consent,
             participant.selected
         ])
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-08 12:25+0500\n"
+"POT-Creation-Date: 2025-09-12 09:38+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -428,7 +428,7 @@ msgstr "Server hatosi"
 msgid "PizzaPitch — место, где вы захотите представить свой стартап."
 msgstr "PizzaPitch — startapingiz haqida taqdimot qilish uchun eng yaxshi joy!"
 
-#: .\templates\includes\navbar.html:12 .\templates\index.html:266
+#: .\templates\includes\navbar.html:12 .\templates\index.html:331
 msgid "О нас"
 msgstr "Biz haqimizda"
 
@@ -448,45 +448,89 @@ msgstr "O'zb"
 msgid "Англ"
 msgstr "Ing"
 
+#: .\templates\index.html:37
+msgid "Программа мероприятия"
+msgstr "Tadbir dasturi"
+
+#: .\templates\index.html:41
+msgid "Регистрация участников и открытие"
+msgstr "Ro'yxatga olish va ochilish marosimi"
+
+#: .\templates\index.html:46
+msgid "Отбор проектов / квалификация (в комнатах)"
+msgstr "Loyihalarni saralash (xonalarda)"
+
+#: .\templates\index.html:51
+msgid "Лекция от эксперта (общий зал)"
+msgstr "Ekspert ma'ruzasi (umumiy zal)"
+
+#: .\templates\index.html:56
+msgid "Kahoot конкурс (общий зал)"
+msgstr "Kahoot konkursi (umumiy zal)"
+
 #: .\templates\index.html:61
+msgid "Обсуждение жюри / Обед"
+msgstr "Hakamlar muhokamasi / Tushlik"
+
+#: .\templates\index.html:66
+msgid "Сессия от эксперта U-Enter"
+msgstr "U-Enter eksperti sessiyasi"
+
+#: .\templates\index.html:71
+msgid "Объявление финалистов"
+msgstr "Finalchilarni e'lon qilish"
+
+#: .\templates\index.html:76
+msgid "Финальный этап"
+msgstr "Final bosqich"
+
+#: .\templates\index.html:81
+msgid "Обсуждение жюри / Конкурс для участников"
+msgstr "Hakamlar muhokamasi / Ishtirokchilar uchun tanlov"
+
+#: .\templates\index.html:86
+msgid "Объявление и награждение победителей"
+msgstr "G'oliblarni e'lon qilish va taqdirlash"
+
+#: .\templates\index.html:126
 msgid "дней"
 msgstr "kun"
 
-#: .\templates\index.html:62
+#: .\templates\index.html:127
 msgid "часов"
 msgstr "soat"
 
-#: .\templates\index.html:63
+#: .\templates\index.html:128
 msgid "минут"
 msgstr "minut"
 
-#: .\templates\index.html:64
+#: .\templates\index.html:129
 msgid "секунд"
 msgstr "sekund"
 
-#: .\templates\index.html:67
+#: .\templates\index.html:132
 msgid "осталось до окончания регистрации"
 msgstr "qoldi ro'yxatdan o'tish uchun"
 
-#: .\templates\index.html:91
+#: .\templates\index.html:156
 msgid ""
 "Чтобы принять участие в мероприятии в качестве гостя, пожалуйста, заполните "
 "следующую форму"
 msgstr "Tadbirda mehmon sifatida qatnashish uchun quyidagi formani to'ldiring."
 
-#: .\templates\index.html:141
+#: .\templates\index.html:206
 msgid "Принять участие"
 msgstr "Ishtirok etish"
 
-#: .\templates\index.html:149
+#: .\templates\index.html:214
 msgid "Регистрация завершена. Спасибо за интерес!"
 msgstr "Ro'yxatga olish tugadi"
 
-#: .\templates\index.html:249
+#: .\templates\index.html:314
 msgid "Отправить заявку"
 msgstr "Ro'yxatdan o'tish"
 
-#: .\templates\index.html:271
+#: .\templates\index.html:336
 msgid ""
 "PizzaPitch — это уникальная платформа продвижения, которая объединяет "
 "основателей стартапов, предпринимателей, менторов и экспертов в одном месте "
@@ -496,7 +540,7 @@ msgstr ""
 "startap asoschilari, tadbirkorlar, mentorlar va ekspertlarni bir maskanda "
 "jamlovchi noyob platforma."
 
-#: .\templates\index.html:272
+#: .\templates\index.html:337
 msgid ""
 "Участники также могут принимать участие в тренингах и расширять свои деловые "
 "связи, находя потенциальных партнеров или инвесторов."
@@ -505,23 +549,23 @@ msgstr ""
 "investorlarni topish hisobiga o‘z biznes aloqalarini rivojlantirish "
 "imkoniyatiga ega bo‘lishadi."
 
-#: .\templates\index.html:283
+#: .\templates\index.html:348
 msgid "Наши мероприятия"
 msgstr "Bizning tadbirlar"
 
-#: .\templates\index.html:330
+#: .\templates\index.html:396
 msgid "Наши партнеры"
 msgstr "Bizning hamkorlar"
 
-#: .\templates\index.html:348
+#: .\templates\index.html:414
 msgid "Наши менторы"
 msgstr "Bizning mentorlar"
 
-#: .\templates\index.html:381
+#: .\templates\index.html:447
 msgid "Будьте в курсе всех новостей"
 msgstr "Barcha yangiliklardan xabardor bo'ling."
 
-#: .\templates\index.html:385
+#: .\templates\index.html:451
 msgid ""
 "Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей "
 "или свяжитесь с нами."
@@ -529,20 +573,20 @@ msgstr ""
 "Telegram kanalimizga obuna bo'ling va barcha dolzarb yangiliklardan xabardor "
 "bo'ling yoki biz bilan bog'laning."
 
-#: .\templates\index.html:389
+#: .\templates\index.html:455
 msgid "Написать нам"
 msgstr "Biz bilan bog'laning"
 
-#: .\templates\index.html:390
+#: .\templates\index.html:456
 msgid "Подписаться"
 msgstr "Obuna bo'lish"
 
-#: .\templates\index.html:394
+#: .\templates\index.html:460
 msgid ""
 "Платформа PizzaPitch реализуется при технической и программной поддержке"
 msgstr "PizzaPitch platformasi O'zbekistondagi"
 
-#: .\templates\index.html:394
+#: .\templates\index.html:460
 msgid "ПРООН Узбекистан"
 msgstr "BMT Taraqqiyot Dasturining amaliy ko'magi asosida amalga oshiriladi."
 
