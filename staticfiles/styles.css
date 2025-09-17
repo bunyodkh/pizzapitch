@@ -602,6 +602,7 @@ span {
     border-radius: 0.5rem;
     max-height: 10rem;
     min-height: 10rem;
+    background-color: #fff;
 }
 
 .partner-item img {
