@@ -13,8 +13,8 @@ class EventAdmin(ModelAdmin):
 
 @admin.register(Participant)
 class ParticipantAdmin(ModelAdmin):
-    list_display = ('name', 'event', 'startup', 'selected')
-    list_filter = ('event', 'selected')
+    list_display = ('registration_type','payment_done','name', 'event', 'startup', 'selected')
+    list_filter = ('event', 'selected', 'registration_type', 'payment_done')
     search_fields = ('name', 'email', 'phone', 'tg', 'startup')
 
 

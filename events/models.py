@@ -100,6 +100,7 @@ class Participant(models.Model):
         default='no',
         verbose_name=_("Согласие на обработку персональных данных")
     )
+    payment_done = models.BooleanField(default=False, verbose_name=_("Оплата произведена"))
     selected = models.BooleanField(default=False, verbose_name=_("Выбран"))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Дата создания"))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_("Дата обновления"))
