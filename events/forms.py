@@ -7,9 +7,7 @@ from .models import Participant, Guest
 class ParticipantRegistrationForm(forms.ModelForm):
     class Meta:
         model = Participant
-        
-        fields = ['name', 'phone', 'tg', 'startup', 'startup_description', 'presentation_link', 'participants_consent']
-        
+        fields = ['name', 'phone', 'tg', 'startup', 'startup_description', 'presentation_link', 'participants_consent', 'registration_type']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'input', 'id':'start-registration', 'placeholder': _('Ваше имя')}),
             'phone': forms.TextInput(attrs={'class': 'input', 'placeholder': _('Ваш телефон')}),
@@ -18,8 +16,8 @@ class ParticipantRegistrationForm(forms.ModelForm):
             'startup_description': forms.Textarea(attrs={'class': 'input', 'placeholder': _('Краткое описание вашего стартапа')}),
             'presentation_link': forms.TextInput(attrs={'class': 'input', 'placeholder': _('Ссылка на презентацию')}),
             'participants_consent': forms.Select(attrs={'class': 'input'}),
+            'registration_type': forms.HiddenInput(),
         }
-        
         labels = {
             'name': _('Полное имя'),
             'phone': _('Номер телефона'),
@@ -28,6 +26,7 @@ class ParticipantRegistrationForm(forms.ModelForm):
             'startup_description': _('Краткая информация о стартапе'),
             'presentation_link': _('Ссылка на презентацию'),
             'participants_consent': _('Согласны ли вы со съемкой вашей презентации, публикацией информации о вашем стартапе и делиться своими контактами с партнерами проекта и заинтересованными сторонами?'),
+            'registration_type': _('Тип регистрации'),
         }
 
     

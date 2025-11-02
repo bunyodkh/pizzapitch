@@ -70,30 +70,37 @@ class Event(models.Model):
 
 
 class Participant(models.Model):
+
     event = models.ForeignKey(Event, on_delete=models.CASCADE, verbose_name=_("Мероприятие"))
-    
     name = models.CharField(max_length=200, verbose_name=_("Имя"), blank=True, null=True)
     phone = models.CharField(max_length=15, verbose_name=_("Телефон"), blank=True, null=True)
     tg = models.CharField(max_length=15, verbose_name=_("Телеграм"), blank=True, null=True)
-    
     startup = models.CharField(max_length=200, verbose_name=_("Название стартапа"), blank=True, null=True)
     startup_description = models.TextField(verbose_name=_("Описание стартапа"), blank=True, null=True)
     presentation_link = models.CharField(max_length=500, verbose_name=_("Ссылка на презентацию"), blank=True, null=True)
+
+    REGISTRATION_TYPE_CHOICES = [
+        ('standard', _("Стандартная")),
+        ('premium', _("Премиум")),
+    ]
+    registration_type = models.CharField(
+        max_length=10,
+        choices=REGISTRATION_TYPE_CHOICES,
+        default='standard',
+        verbose_name=_("Тип регистрации")
+    )
 
     CONSENT_CHOICES = [
         ('yes', _("Да")),
         ('no', _("Нет")),
     ]
-
     participants_consent = models.CharField(
         max_length=5,
         choices=CONSENT_CHOICES,
         default='no',
         verbose_name=_("Согласие на обработку персональных данных")
     )
-
     selected = models.BooleanField(default=False, verbose_name=_("Выбран"))
-
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("Дата создания"))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_("Дата обновления"))
 

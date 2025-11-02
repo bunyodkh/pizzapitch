@@ -10,52 +10,45 @@ from .forms import ParticipantRegistrationForm, GuestRegistrationForm
 from django.contrib.auth.decorators import login_required
 
 
-# def register_participant(request):
-#     active_event = Event.objects.filter(is_active=True).first()
 
-#     if request.method == 'POST':
-#         form = ParticipantRegistrationForm(request.POST)
-
-#         if form.is_valid():
-#             participant = form.save(commit=False)
-#             participant.event = active_event
-#             participant.save()
-#             messages.success(request, "success")
-#             return redirect(request.path)
-#     else:
-#         form = ParticipantRegistrationForm()
-#     return render(request, 'index.html', {
-#         'form': form,
-#         'active_event': active_event,
-#     })
-
-
-def register_participant(request):
+# Standard Registration View
+def standard_registration(request):
     active_event = Event.objects.filter(is_active=True).first()
-
-    print(active_event.guest_registration)
-
     if request.method == 'POST':
-        if active_event.guest_registration and active_event.registration_closed:
-            form = GuestRegistrationForm(request.POST)
-        elif not active_event.registration_closed:
-            form = ParticipantRegistrationForm(request.POST)
-
+        form = ParticipantRegistrationForm(request.POST)
         if form.is_valid():
             participant = form.save(commit=False)
             participant.event = active_event
+            participant.registration_type = 'standard'
             participant.save()
-            messages.success(request, "success")
+            messages.success(request, "Standard registration successful!")
             return redirect(request.path)
     else:
-        if active_event.guest_registration and active_event.registration_closed:
-            form = GuestRegistrationForm()
-        elif not active_event.registration_closed:
-            form = ParticipantRegistrationForm()
+        form = ParticipantRegistrationForm(initial={'registration_type': 'standard'})
     return render(request, 'index.html', {
         'form': form,
         'active_event': active_event,
-        'guest_registration': active_event.guest_registration,
+        'registration_type': 'standard',
+    })
+
+# Premium Registration View
+def premium_registration(request):
+    active_event = Event.objects.filter(is_active=True).first()
+    if request.method == 'POST':
+        form = ParticipantRegistrationForm(request.POST)
+        if form.is_valid():
+            participant = form.save(commit=False)
+            participant.event = active_event
+            participant.registration_type = 'premium'
+            participant.save()
+            messages.success(request, "Premium registration successful!")
+            return redirect(request.path)
+    else:
+        form = ParticipantRegistrationForm(initial={'registration_type': 'premium'})
+    return render(request, 'index.html', {
+        'form': form,
+        'active_event': active_event,
+        'registration_type': 'premium',
     })
 
 

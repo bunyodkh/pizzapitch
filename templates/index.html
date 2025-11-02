@@ -137,184 +137,160 @@
                     </div>
 
                     <div class="registration-form">
-                        {% if active_event.guest_registration and active_event.registration_closed and messages %}
-                            <ul class="messages">
-                                {% for message in messages %}
-                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> 
-                                    {% if LANGUAGE_CODE == 'ru' %}Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся.{% endif %}
-                                    {% if LANGUAGE_CODE == 'uz' %}Arizangizni qabul qildik! Qiziqishingiz uchun rahmat. Siz bilan bog'lanamiz.{% endif %}
-                                    {% if LANGUAGE_CODE == 'en' %}We have received your application to participate! Thank you for your interest. We will contact you.{% endif %}     
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-                        
-                        {% if active_event.guest_registration and active_event.registration_closed and not messages %}
-                            <form class="form" action="{% url 'events:register-participant'%}" method="POST">
-                                {% csrf_token %}
+                        {% if registration_type == 'standard' or registration_type == 'premium' %}
+                            {% if messages %}
+                                <ul class="messages">
+                                    {% for message in messages %}
+                                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                            {% if registration_type == 'premium' %}
+                                                {% if LANGUAGE_CODE == 'ru' %}
+                                                    Мы получили вашу заявку на участие! Ниже ссылки для оплаты. 
+                                                    <div class="payment-links">
+                                                        <a class="payment-link" href="https://transfer.paycom.uz/60c9fdbbd54cf9fd7ef9aba8" target="_blank">{% trans 'Оплата через Payme'%}</a>
+                                                        <a class="payment-link" href="https://indoor.click.uz/pay?id=021696&t=0" target="_blank">{% trans 'Оплата через Click' %}</a>
+                                                    </div>
+                                                    <p class="payment-message">{% trans 'Сделайте оплату и ' %}<a target="_blank" href="https://t.me/pizzapitchuz_team">{% trans 'сообщите нам.'%}</p>
+                                                {% endif %}
 
-                                <p class="guest-registration-heading">{% trans "Чтобы принять участие в мероприятии в качестве гостя, пожалуйста, заполните следующую форму" %}</p>
+                                                {% if LANGUAGE_CODE == 'uz' %}
+                                                    Arizangizni qabul qildik! Quyida to'lov uchun havolalar.
+                                                    <div class="payment-links">
+                                                        <a class="payment-link" href="https://transfer.paycom.uz/60c9fdbbd54cf9fd7ef9aba8" target="_blank">{% trans 'Оплата через Payme'%}</a>
+                                                        <a class="payment-link" href="https://indoor.click.uz/pay?id=021696&t=0" target="_blank">{% trans 'Оплата через Click' %}</a>
+                                                    </div>
+                                                    <p class="payment-message">{% trans 'Сделайте оплату и ' %}<a target="_blank" href="https://t.me/pizzapitchuz_team">{% trans 'сообщите нам.'%}</p>
+                                                {% endif %}
 
-                                <div class="form-group">
+                                                {% if LANGUAGE_CODE == 'en' %}
+                                                    We have received your application! Below are the links for payment. 
+                                                    <div class="payment-links">
+                                                        <a class="payment-link" href="https://transfer.paycom.uz/60c9fdbbd54cf9fd7ef9aba8" target="_blank">{% trans 'Оплата через Payme'%}</a>
+                                                        <a class="payment-link" href="https://indoor.click.uz/pay?id=021696&t=0" target="_blank">{% trans 'Оплата через Click' %}</a>
+                                                    </div>
+                                                    <p class="payment-message">{% trans 'Сделайте оплату и ' %}<a target="_blank" href="https://t.me/pizzapitchuz_team">{% trans 'сообщите нам.'%}</p>
+                                                {% endif %}     
+                                            {% elif registration_type == 'standard' %}
+                                                {% if LANGUAGE_CODE == 'ru' %}Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся.{% endif %}
+                                                {% if LANGUAGE_CODE == 'uz' %}Arizangizni qabul qildik! Qiziqish uchun rahmat. Siz bilan bog'lanamiz.{% endif %}
+                                                {% if LANGUAGE_CODE == 'en' %}We have received your application! Thank you for the interest. We will contact you.{% endif %}
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                <form class="form" method="POST">
+                                    {% csrf_token %}
+                                    <div>
+                                        {% if registration_type == 'premium' %}
+                                            <h3 class="premium-registration-heading">{% trans 'Premium Pass Registration' %}</h3>
+                                        {% endif %}
+                                        {% if registration_type == 'standard' %}<h3 class="free-registration-heading">{% trans 'Standard Pass Registration' %}</h3>{% endif %}
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            {% if form.name.errors %}
+                                                <label>{{ form.name.errors.0 }}</label>
+                                                {{ form.name|add_class:"input-error" }}
+                                            {% else %}
+                                                <label>{{ form.name.label }}</label>
+                                                {{ form.name }} 
+                                            {% endif %}
+                                        </div>
+                                        <div class="input-group">
+                                            {% if form.phone.errors %}
+                                                <label>{{ form.phone.errors.0 }}</label>
+                                                {{ form.phone|add_class:"input-error" }}
+                                            {% else %}
+                                                <label>{{ form.phone.label }}</label>
+                                                {{ form.phone }} 
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            {% if form.tg.errors %}
+                                                <label>{{ form.tg.errors.0 }}</label>
+                                                {{ form.tg|add_class:"input-error" }}
+                                            {% else %}
+                                                <label>{{ form.tg.label }}</label>
+                                                {{ form.tg }} 
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            {% if form.startup.errors %}
+                                                <label>{{ form.startup.errors.0 }}</label>
+                                                {{ form.startup|add_class:"input-error" }}
+                                            {% else %}
+                                                <label>{{ form.startup.label }}</label>
+                                                {{ form.startup }} 
+                                            {% endif %}
+                                        </div>
+                                    </div>
                                     <div class="input-group">
-                                        {% if form.name.errors %}
-                                            <label>{{ form.name.errors.0 }}</label>
-                                            {{ form.name|add_class:"input-error" }}
+                                        {% if form.startup_description.errors %}
+                                            <label>{{ form.startup_description.errors.0 }}</label>
+                                            {{ form.startup_description|add_class:"input-error" }}
                                         {% else %}
-                                            <label>{{ form.name.label }}</label>
-                                            {{ form.name }} 
+                                            <label>{{ form.startup_description.label }}</label>
+                                            {{ form.startup_description }} 
                                         {% endif %}
                                     </div>
-
-                                    <div class="input-group">
-                                        {% if form.phone.errors %}
-                                            <label>{{ form.phone.errors.0 }}</label>
-                                            {{ form.phone|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.phone.label }}</label>
-                                            {{ form.phone }} 
-                                        {% endif %}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            {% if form.presentation_link.errors %}
+                                                <label>{{ form.presentation_link.errors.0 }}</label>
+                                                {{ form.presentation_link|add_class:"input-error" }}
+                                            {% else %}
+                                                <label>{{ form.presentation_link.label }}</label>
+                                                {{ form.presentation_link }} 
+                                            {% endif %}
+                                        </div>
                                     </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            {% if form.participants_consent.errors %}
+                                                <label>{{ form.participants_consent.errors.0 }}</label>
+                                                {{ form.participants_consent|add_class:"input-error" }}
+                                            {% else %}
+                                                <label>{{ form.participants_consent.label }}</label>
+                                                {{ form.participants_consent }} 
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    {{ form.registration_type }}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <button type="submit" class="reg-button">{% trans 'Отправить заявку'%}</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            {% endif %}
+                        {% else %}
+                            <div class="features">
+                                <div class="premium-features">
+                                    <h3>{% trans 'Premium Pass' %}</h3>
+                                    <div>
+                                        <div class="premium-feature"><p>{% trans 'Coffee break and pizza' %}</p></div>
+                                        <div class="premium-feature"><p>{% trans 'Personalized feedback from invited experts' %}</p></div>
+                                        <div class="premium-feature"><p>{% trans 'Direct entry to PizzaPitch (no selection process required)' %}</p></div>
+                                        <div class="premium-feature"><p>{% trans 'One-on-one mentoring sessions with industry experts' %}</p></div>
+                                        <div class="premium-feature"><p>{% trans 'Startup profile showcase to CS// Angels Club' %}</p></div>
+                                        <div class="premium-feature"><p>{% trans 'Eligibility to win C-Space certificate valued up to 3 million soums' %}</p></div>
+                                    </div>
+                                    <a class="premium-feature-button reg-button" href="{% url 'events:premium-registration' %}">{% trans 'Registration with Premium Pass'%}</a>
                                 </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        {% if form.tg.errors %}
-                                            <label>{{ form.tg.errors.0 }}</label>
-                                            {{ form.tg|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.tg.label }}</label>
-                                            {{ form.tg }} 
-                                        {% endif %}
+                                <div class="free-features">
+                                    <h3>{% trans 'Standard Pass' %}</h3>
+                                    <div>
+                                        <div class="free-feature"><p>{% trans 'Coffee break and pizza' %}</p></div>
+                                        <div class="free-feature"><p>{% trans 'Group feedback session with invited experts' %}</p></div>
+                                        <div class="free-feature"><p>{% trans 'Standard PizzaPitch participation (subject to selection)' %}</p></div>
                                     </div>
+                                    <a class="free-feature-button reg-button" href="{% url 'events:standard-registration' %}">{% trans 'Registration with Standard Pass'%}</a>
                                 </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        {% if form.guest_consent.errors %}
-                                            <label>{{ form.guest_consent.errors.0 }}</label>
-                                            {{ form.guest_consent|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.guest_consent.label }}</label>
-                                            {{ form.guest_consent }} 
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <button type="submit" class="reg-button">{% trans 'Принять участие'%}</button>
-                                    </div>
-                                </div>
-                            </form>
-                        {% endif %}
-
-                        {% if active_event.registration_closed and not active_event.guest_registration %}
-                            <ul class="messages">
-                                <li class="success">{% trans "Регистрация завершена. Спасибо за интерес!" %}</li>
-                            </ul>
-                        {% endif %}
-                        
-                        {% if not active_event.registration_closed and not active_event.guest_registration and messages %}
-                            <ul class="messages">
-                                {% for message in messages %}
-                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> 
-                                    {% if LANGUAGE_CODE == 'ru' %}Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся.{% endif %}
-                                    {% if LANGUAGE_CODE == 'uz' %}Arizangizni qabul qildik! Qiziqishingiz uchun rahmat. Siz bilan bog'lanamiz.{% endif %}
-                                    {% if LANGUAGE_CODE == 'en' %}We have received your application to participate! Thank you for your interest. We will contact you.{% endif %}     
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
-
-                        {% if not active_event.registration_closed and not active_event.guest_registration %}
-                            <form class="form" action="{% url 'events:register-participant'%}" method="POST">
-                                {% csrf_token %}
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        {% if form.name.errors %}
-                                            <label>{{ form.name.errors.0 }}</label>
-                                            {{ form.name|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.name.label }}</label>
-                                            {{ form.name }} 
-                                        {% endif %}
-                                    </div>
-
-                                    <div class="input-group">
-                                        {% if form.phone.errors %}
-                                            <label>{{ form.phone.errors.0 }}</label>
-                                            {{ form.phone|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.phone.label }}</label>
-                                            {{ form.phone }} 
-                                        {% endif %}
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        {% if form.tg.errors %}
-                                            <label>{{ form.tg.errors.0 }}</label>
-                                            {{ form.tg|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.tg.label }}</label>
-                                            {{ form.tg }} 
-                                        {% endif %}
-                                    </div>
-
-                                    <div class="input-group">
-                                        {% if form.startup.errors %}
-                                            <label>{{ form.startup.errors.0 }}</label>
-                                            {{ form.startup|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.startup.label }}</label>
-                                            {{ form.startup }} 
-                                        {% endif %}
-                                    </div>
-                                </div>
-
-                                <div class="input-group">
-                                    {% if form.startup_description.errors %}
-                                        <label>{{ form.startup_description.errors.0 }}</label>
-                                        {{ form.startup_description|add_class:"input-error" }}
-                                    {% else %}
-                                        <label>{{ form.startup_description.label }}</label>
-                                        {{ form.startup_description }} 
-                                    {% endif %}
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        {% if form.presentation_link.errors %}
-                                            <label>{{ form.presentation_link.errors.0 }}</label>
-                                            {{ form.presentation_link|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.presentation_link.label }}</label>
-                                            {{ form.presentation_link }} 
-                                        {% endif %}
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        {% if form.participants_consent.errors %}
-                                            <label>{{ form.participants_consent.errors.0 }}</label>
-                                            {{ form.participants_consent|add_class:"input-error" }}
-                                        {% else %}
-                                            <label>{{ form.participants_consent.label }}</label>
-                                            {{ form.participants_consent }} 
-                                        {% endif %}
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <button type="submit" class="reg-button">{% trans 'Отправить заявку'%}</button>
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         {% endif %}
                     </div>
                 </div>

@@ -296,7 +296,7 @@ span {
 .title-type {
     position: absolute;
     top: -2rem;
-    left: -2.5rem;
+    left: -4.5rem;
     font-size: 2rem;
     font-family: inherit;
     font-style: italic;
@@ -899,6 +899,94 @@ span {
 
 .detail-time {
     margin-right: 2rem;
+}
+
+
+.premium-features {
+    margin-bottom: 3rem;
+}
+
+.free-feature,
+.premium-feature {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.premium-feature:last-child,
+.free-feature:last-child {
+    border-bottom: none;
+}
+
+.free-features > h3,
+.premium-features > h3{
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.free-features > h3 {
+    color: #878787;
+} 
+
+.premium-features > h3 {
+    color: var(--brand-color);
+} 
+
+.free-feature > p,
+.premium-feature > p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.premium-feature-button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+}
+
+.free-feature-button {
+    margin-top: 1rem;
+    background-color: #afafaf;
+    padding: 0.5rem;
+}
+
+.premium-registration-heading {
+    margin-bottom: 1rem;
+    color: var(--brand-color);
+    font-weight: 800;
+}
+
+.free-registration-heading {
+    margin-bottom: 1rem;
+    color:#8f8f8f;
+    font-weight: 800;
+}
+
+.payment-links {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+}
+
+.payment-link {
+    font-size: 1.3rem;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    padding: 1rem;
+    color: var(--brand-color);
+}
+
+.payment-message {
+    font-size: 1.3rem;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-weight: 600;
+}
+
+.payment-message > a {
+    color: var(--brand-color);
+    text-decoration: underline;
 }
 
 @media (max-width: 1280px) {
