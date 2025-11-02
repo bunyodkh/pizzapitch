@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 10:22+0500\n"
+"POT-Creation-Date: 2025-11-02 19:25+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -440,7 +440,7 @@ msgstr "Server error"
 msgid "PizzaPitch — место, где вы захотите представить свой стартап."
 msgstr "PizzaPitch — Place you want to pitch."
 
-#: .\templates\includes\navbar.html:12 .\templates\index.html:307
+#: .\templates\includes\navbar.html:12 .\templates\index.html:309
 msgid "О нас"
 msgstr "About Us"
 
@@ -524,89 +524,84 @@ msgstr "seconds"
 msgid "осталось до окончания регистрации"
 msgstr "left until registration closes"
 
-#: .\templates\index.html:149 .\templates\index.html:158
-#: .\templates\index.html:167
-msgid "Оплата через Payme"
-msgstr "Payment via Payme"
+#: .\templates\index.html:148 .\templates\index.html:157
+#: .\templates\index.html:166
+msgid "Для завершения регистрации Premium Pass, пожалуйста, оплатите 500,000 сум по ссылкам ниже."
+msgstr "To complete your Premium Pass registration, please make a payment of 500,000 UZS using the links below."
 
 #: .\templates\index.html:150 .\templates\index.html:159
 #: .\templates\index.html:168
+msgid "Оплата через Payme"
+msgstr "Payment via Payme"
+
+#: .\templates\index.html:151 .\templates\index.html:160
+#: .\templates\index.html:169
 msgid "Оплата через Click"
 msgstr "Payment via Click"
 
-#: .\templates\index.html:152 .\templates\index.html:161
-#: .\templates\index.html:170
-msgid "Сделайте оплату и "
-msgstr "After payment"
-
-#: .\templates\index.html:152 .\templates\index.html:161
-#: .\templates\index.html:170
-#, fuzzy
-#| msgid "Напишите нам"
-msgid "сообщите нам."
-msgstr "Contact us"
-
 #: .\templates\index.html:185
-msgid "Premium Pass Registration"
-msgstr ""
+#, fuzzy
+#| msgid "Регистрация с Premium Pass"
+msgid "Premium Pass Регистрация"
+msgstr "Premium Pass Registration"
 
-#: .\templates\index.html:187
-msgid "Standard Pass Registration"
-msgstr ""
+#: .\templates\index.html:188
+msgid "Standard Pass Регистрация"
+msgstr "Standard Pass Registration"
 
-#: .\templates\index.html:265
+#: .\templates\index.html:267
 msgid "Отправить заявку"
 msgstr "Submit an application"
 
-#: .\templates\index.html:273
+#: .\templates\index.html:275
 msgid "Premium Pass"
 msgstr "Premium Pass"
 
-#: .\templates\index.html:275 .\templates\index.html:287
+#: .\templates\index.html:277 .\templates\index.html:289
 msgid "Кофе-брейк и пицца"
 msgstr "Coffee break and pizza"
 
-#: .\templates\index.html:276
+#: .\templates\index.html:278
 msgid "Персонализированная обратная связь от приглашенных экспертов"
 msgstr "Personalized feedback from invited experts"
 
-#: .\templates\index.html:277
+#: .\templates\index.html:279
 msgid "Прямой вход в PizzaPitch без процесса отбора"
 msgstr "Direct entry to PizzaPitch (no selection process required)"
 
-#: .\templates\index.html:278
+#: .\templates\index.html:280
 msgid "Индивидуальные менторские сессии с отраслевыми экспертами"
 msgstr "One-on-one mentoring sessions with industry experts"
 
-#: .\templates\index.html:279
+#: .\templates\index.html:281
 msgid "Презентация профиля стартапа клубу CS// Angels Club"
 msgstr "Startup profile showcase to CS// Angels Club"
 
-#: .\templates\index.html:280
-msgid "Право на получение сертификата C-Space стоимостью до 3 миллионов сумов"
-msgstr "Eligibility to win C-Space certificate valued up to 3 million soums"
-
 #: .\templates\index.html:282
+msgid "Шанс выиграть сертификат C-Space стоимостью до 3 миллионов сумов"
+msgstr "Chance to win a C-Space certificate worth up to 3 million sums"
+
+#: .\templates\index.html:284
 msgid "Регистрация с Premium Pass"
 msgstr "Premium Pass Registration"
 
-#: .\templates\index.html:285
+#: .\templates\index.html:287
 msgid "Standard Pass"
 msgstr "Standard Pass"
 
-#: .\templates\index.html:288
+#: .\templates\index.html:290
 msgid "Групповая сессия обратной связи с приглашенными экспертами"
 msgstr "Group feedback session with invited experts"
 
-#: .\templates\index.html:289
+#: .\templates\index.html:291
 msgid "Стандартное участие в PizzaPitch (при условии прохождения отбора)"
 msgstr "Standard PizzaPitch participation (subject to selection)"
 
-#: .\templates\index.html:291
+#: .\templates\index.html:293
 msgid "Регистрация с Standard Pass"
 msgstr "Standard Pass Registration"
 
-#: .\templates\index.html:312
+#: .\templates\index.html:314
 msgid ""
 "PizzaPitch — это уникальная платформа продвижения, которая объединяет "
 "основателей стартапов, предпринимателей, менторов и экспертов в одном месте "
@@ -616,7 +611,7 @@ msgstr ""
 "founders, entrepreneurs, mentors, and experts in one place to support "
 "innovation and business development."
 
-#: .\templates\index.html:313
+#: .\templates\index.html:315
 msgid ""
 "Участники также могут принимать участие в тренингах и расширять свои деловые "
 "связи, находя потенциальных партнеров или инвесторов."
@@ -624,23 +619,23 @@ msgstr ""
 "Participants can also take part in trainings and expand their business "
 "connections by finding potential partners or investors."
 
-#: .\templates\index.html:324
+#: .\templates\index.html:326
 msgid "Наши мероприятия"
 msgstr "Our Events"
 
-#: .\templates\index.html:372
+#: .\templates\index.html:374
 msgid "Наши партнеры"
 msgstr "Our Partners"
 
-#: .\templates\index.html:390
+#: .\templates\index.html:392
 msgid "Наши менторы"
 msgstr "Our Mentors"
 
-#: .\templates\index.html:423
+#: .\templates\index.html:425
 msgid "Будьте в курсе всех новостей"
 msgstr "Stay up to date on all the news."
 
-#: .\templates\index.html:427
+#: .\templates\index.html:429
 msgid ""
 "Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей "
 "или свяжитесь с нами."
@@ -648,22 +643,30 @@ msgstr ""
 "Subscribe to our Telegram channel to stay up to date on all the latest news, "
 "or contact us."
 
-#: .\templates\index.html:431
+#: .\templates\index.html:433
 msgid "Написать нам"
 msgstr "Contact us"
 
-#: .\templates\index.html:432
+#: .\templates\index.html:434
 msgid "Подписаться"
 msgstr "Subscribe"
 
-#: .\templates\index.html:436
+#: .\templates\index.html:438
 msgid ""
 "Платформа PizzaPitch реализуется при технической и программной поддержке"
 msgstr "The PizzaPitch platform is supported by"
 
-#: .\templates\index.html:436
+#: .\templates\index.html:438
 msgid "ПРООН Узбекистан"
 msgstr "the United Nations Development Programme (UNDP) in Uzbekistan"
+
+#~ msgid "Сделайте оплату и "
+#~ msgstr "After payment"
+
+#, fuzzy
+#~| msgid "Напишите нам"
+#~ msgid "сообщите нам."
+#~ msgstr "Contact us"
 
 #~ msgid ""
 #~ "Чтобы принять участие в мероприятии в качестве гостя, пожалуйста, "

@@ -975,13 +975,14 @@ span {
     border-radius: 1rem;
     padding: 1rem;
     color: var(--brand-color);
+    margin-bottom: 1rem;
 }
 
 .payment-message {
-    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
     text-align: center;
     font-family: 'Merriweather', serif;
-    font-weight: 600;
 }
 
 .payment-message > a {
