@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-12 09:38+0500\n"
+"POT-Creation-Date: 2025-11-02 10:22+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,51 +30,51 @@ msgstr "Rus"
 msgid "Uzbek"
 msgstr "O'zbek"
 
-#: .\events\forms.py:14 .\events\forms.py:86
+#: .\events\forms.py:12 .\events\forms.py:85
 msgid "Ваше имя"
 msgstr "Ismingiz"
 
-#: .\events\forms.py:15 .\events\forms.py:87
+#: .\events\forms.py:13 .\events\forms.py:86
 msgid "Ваш телефон"
 msgstr "Telefon raqamingiz"
 
-#: .\events\forms.py:16 .\events\forms.py:88
+#: .\events\forms.py:14 .\events\forms.py:87
 msgid "Ваш ник в Телеграм"
 msgstr "Telegramdagi ismingiz"
 
-#: .\events\forms.py:17
+#: .\events\forms.py:15
 msgid "Название вашего стартапа"
 msgstr "Startapingizning nomi"
 
-#: .\events\forms.py:18
+#: .\events\forms.py:16
 msgid "Краткое описание вашего стартапа"
 msgstr "Startapingizning qisqacha tasnifi"
 
-#: .\events\forms.py:19 .\events\forms.py:29 .\events\models.py:81
+#: .\events\forms.py:17 .\events\forms.py:27 .\events\models.py:80
 msgid "Ссылка на презентацию"
 msgstr "Taqdimotingizga havola"
 
-#: .\events\forms.py:24 .\events\forms.py:93
+#: .\events\forms.py:22 .\events\forms.py:92
 msgid "Полное имя"
 msgstr "To'liq ismingiz"
 
-#: .\events\forms.py:25 .\events\forms.py:94
+#: .\events\forms.py:23 .\events\forms.py:93
 msgid "Номер телефона"
 msgstr "Telefon nomeringiz"
 
-#: .\events\forms.py:26 .\events\forms.py:95
+#: .\events\forms.py:24 .\events\forms.py:94
 msgid "Телеграм ник"
 msgstr "Telegram"
 
-#: .\events\forms.py:27 .\events\models.py:79
+#: .\events\forms.py:25 .\events\models.py:78
 msgid "Название стартапа"
 msgstr "Startup nomi"
 
-#: .\events\forms.py:28
+#: .\events\forms.py:26
 msgid "Краткая информация о стартапе"
 msgstr "Startup haqida qisqacha ma'lumot"
 
-#: .\events\forms.py:30
+#: .\events\forms.py:28
 msgid ""
 "Согласны ли вы со съемкой вашей презентации, публикацией информации о вашем "
 "стартапе и делиться своими контактами с партнерами проекта и "
@@ -84,35 +84,41 @@ msgstr ""
 "qilish va loyiha hamkorlari hamda manfaatdor tomonlar bilan "
 "kontaktlaringizni baham ko'rishga rozimisiz?"
 
-#: .\events\forms.py:37 .\events\forms.py:103
+#: .\events\forms.py:29 .\events\models.py:90
+#, fuzzy
+#| msgid "Крайний срок регистрации"
+msgid "Тип регистрации"
+msgstr "Ro'yxatdan o'tishning oxirgi sanasi"
+
+#: .\events\forms.py:36 .\events\forms.py:102
 msgid "Полное имя обязательно."
 msgstr "Toʻliq ismni kiritish lozim."
 
-#: .\events\forms.py:43 .\events\forms.py:109
+#: .\events\forms.py:42 .\events\forms.py:108
 msgid "Номер телефона обязателен."
 msgstr "Telefon raqamini kiritish lozim."
 
-#: .\events\forms.py:49 .\events\forms.py:115
+#: .\events\forms.py:48 .\events\forms.py:114
 msgid "Телеграм ник обязателен."
 msgstr "Telegram nikini kiritish lozim."
 
-#: .\events\forms.py:55
+#: .\events\forms.py:54
 msgid "Название стартапа обязательно."
 msgstr "Startap nomini kiritish lozim."
 
-#: .\events\forms.py:61
+#: .\events\forms.py:60
 msgid "Краткое описание стартапа обязательно."
 msgstr "Qisqa tasnifni kiritish lozim."
 
-#: .\events\forms.py:67
+#: .\events\forms.py:66
 msgid "Ссылка на презентацию обязательна."
 msgstr "Taqdimotga havola kiritish lozim."
 
-#: .\events\forms.py:73 .\events\forms.py:121
+#: .\events\forms.py:72 .\events\forms.py:120
 msgid "Пожалуйста, выберите согласие на обработку персональных данных."
 msgstr "Iltimos, shaxsiy ma'lumotlarni qayta ishlashga rozilikni belgilang."
 
-#: .\events\forms.py:96
+#: .\events\forms.py:95
 msgid "Согласны ли вы на обработку персональных данных?"
 msgstr "Shaxsiy ma'lumotlarni qayta ishlashga rozilik"
 
@@ -140,13 +146,13 @@ msgstr "Ingliz tilidagi tasnifi"
 msgid "Изображение"
 msgstr "Rasm"
 
-#: .\events\models.py:16 .\events\models.py:53 .\events\models.py:97
-#: .\events\models.py:131
+#: .\events\models.py:16 .\events\models.py:53 .\events\models.py:104
+#: .\events\models.py:138
 msgid "Дата создания"
 msgstr "Yaratilish vaqti"
 
-#: .\events\models.py:17 .\events\models.py:54 .\events\models.py:98
-#: .\events\models.py:132
+#: .\events\models.py:17 .\events\models.py:54 .\events\models.py:105
+#: .\events\models.py:139
 msgid "Дата обновления"
 msgstr "Yanglilanish vaqti"
 
@@ -200,7 +206,7 @@ msgstr "Ro'yxatga olish tugadi"
 msgid "Регистрация гостей"
 msgstr "Ro'yxatga olish tugadi"
 
-#: .\events\models.py:57 .\events\models.py:73 .\events\models.py:111
+#: .\events\models.py:57 .\events\models.py:74 .\events\models.py:118
 #, fuzzy
 #| msgid "Мероприятия"
 msgid "Мероприятие"
@@ -210,53 +216,63 @@ msgstr "Tadbirlar"
 msgid "Мероприятия"
 msgstr "Tadbirlar"
 
-#: .\events\models.py:75 .\events\models.py:113 .\mentors\models.py:6
+#: .\events\models.py:75 .\events\models.py:120 .\mentors\models.py:6
 msgid "Имя"
 msgstr "Ism"
 
-#: .\events\models.py:76 .\events\models.py:114 .\mentors\models.py:11
+#: .\events\models.py:76 .\events\models.py:121 .\mentors\models.py:11
 msgid "Телефон"
 msgstr "Telefon"
 
-#: .\events\models.py:77 .\events\models.py:115
+#: .\events\models.py:77 .\events\models.py:122
 msgid "Телеграм"
 msgstr "Telegram"
 
-#: .\events\models.py:80
+#: .\events\models.py:79
 msgid "Описание стартапа"
 msgstr "Startap tasnifi"
 
-#: .\events\models.py:84 .\events\models.py:118
+#: .\events\models.py:83
+#, fuzzy
+#| msgid "Наши партнеры"
+msgid "Стандартная"
+msgstr "Bizning hamkorlar"
+
+#: .\events\models.py:84
+msgid "Премиум"
+msgstr ""
+
+#: .\events\models.py:94 .\events\models.py:125
 msgid "Да"
 msgstr "Ha"
 
-#: .\events\models.py:85 .\events\models.py:119
+#: .\events\models.py:95 .\events\models.py:126
 msgid "Нет"
 msgstr "Yo'q"
 
-#: .\events\models.py:92 .\events\models.py:126
+#: .\events\models.py:101 .\events\models.py:133
 msgid "Согласие на обработку персональных данных"
 msgstr "Shaxsiy ma'lumotlarni qayta ishlashga rozilik"
 
-#: .\events\models.py:95 .\events\models.py:129
+#: .\events\models.py:103 .\events\models.py:136
 msgid "Выбран"
 msgstr "Tanlangan"
 
-#: .\events\models.py:102
+#: .\events\models.py:109
 msgid "Участник"
 msgstr "Qatnashuvchi"
 
-#: .\events\models.py:103
+#: .\events\models.py:110
 msgid "Участники"
 msgstr "Qatnashuvchilar"
 
-#: .\events\models.py:136
+#: .\events\models.py:143
 #, fuzzy
 #| msgid "Должность"
 msgid "Гость"
 msgstr "Lavozim"
 
-#: .\events\models.py:137
+#: .\events\models.py:144
 msgid "Гости"
 msgstr "Mehmon"
 
@@ -428,7 +444,7 @@ msgstr "Server hatosi"
 msgid "PizzaPitch — место, где вы захотите представить свой стартап."
 msgstr "PizzaPitch — startapingiz haqida taqdimot qilish uchun eng yaxshi joy!"
 
-#: .\templates\includes\navbar.html:12 .\templates\index.html:331
+#: .\templates\includes\navbar.html:12 .\templates\index.html:307
 msgid "О нас"
 msgstr "Biz haqimizda"
 
@@ -512,25 +528,93 @@ msgstr "sekund"
 msgid "осталось до окончания регистрации"
 msgstr "qoldi ro'yxatdan o'tish uchun"
 
-#: .\templates\index.html:156
-msgid ""
-"Чтобы принять участие в мероприятии в качестве гостя, пожалуйста, заполните "
-"следующую форму"
-msgstr "Tadbirda mehmon sifatida qatnashish uchun quyidagi formani to'ldiring."
+#: .\templates\index.html:149 .\templates\index.html:158
+#: .\templates\index.html:167
+msgid "Оплата через Payme"
+msgstr "Payme orqali to'lov"
 
-#: .\templates\index.html:206
-msgid "Принять участие"
-msgstr "Ishtirok etish"
+#: .\templates\index.html:150 .\templates\index.html:159
+#: .\templates\index.html:168
+msgid "Оплата через Click"
+msgstr "Click orqali to'lov"
 
-#: .\templates\index.html:214
-msgid "Регистрация завершена. Спасибо за интерес!"
-msgstr "Ro'yxatga olish tugadi"
+#: .\templates\index.html:152 .\templates\index.html:161
+#: .\templates\index.html:170
+msgid "Сделайте оплату и "
+msgstr "To'lovni amalga oshiring va"
 
-#: .\templates\index.html:314
+#: .\templates\index.html:152 .\templates\index.html:161
+#: .\templates\index.html:170
+#, fuzzy
+#| msgid "Напишите нам"
+msgid "сообщите нам."
+msgstr "Biz bilan bog'laning"
+
+#: .\templates\index.html:185
+msgid "Premium Pass Registration"
+msgstr "Premium Pass orqali ro'yxatdan o'tish"
+
+#: .\templates\index.html:187
+msgid "Standard Pass Registration"
+msgstr "Standard Pass orqali ro'yxatdan o'tish"
+
+#: .\templates\index.html:265
 msgid "Отправить заявку"
 msgstr "Ro'yxatdan o'tish"
 
-#: .\templates\index.html:336
+#: .\templates\index.html:273
+msgid "Premium Pass"
+msgstr "Premium Pass"
+
+#: .\templates\index.html:275 .\templates\index.html:287
+msgid "Кофе-брейк и пицца"
+msgstr "Kofe va pitsa"
+
+#: .\templates\index.html:276
+msgid "Персонализированная обратная связь от приглашенных экспертов"
+msgstr "Taklif qilingan ekspertlardan fikr-mulohaza olish"
+
+#: .\templates\index.html:277
+msgid "Прямой вход в PizzaPitch без процесса отбора"
+msgstr "PizzaPitch ga tanlovsiz to'g'ridan-to'g'ri kirish"
+
+#: .\templates\index.html:278
+msgid "Индивидуальные менторские сессии с отраслевыми экспертами"
+msgstr "Soha ekspertlari bilan yuzma-yuz mentorlik sessiyalari"
+
+#: .\templates\index.html:279
+msgid "Презентация профиля стартапа клубу CS// Angels Club"
+msgstr "Startap profilini CS// Angellar Klubiga taqdim etish"
+
+#: .\templates\index.html:280
+msgid "Право на получение сертификата C-Space стоимостью до 3 миллионов сумов"
+msgstr "3 million so'mgacha qiymatdagi C-Space sertifikatini yutib olish imkoniyati"
+
+#: .\templates\index.html:282
+#, fuzzy
+#| msgid "Регистрация закрыта"
+msgid "Регистрация с Premium Pass"
+msgstr "Ro'yxatga olish tugadi"
+
+#: .\templates\index.html:285
+msgid "Standard Pass"
+msgstr "Standard Pass"
+
+#: .\templates\index.html:288
+msgid "Групповая сессия обратной связи с приглашенными экспертами"
+msgstr "Taklif qilingan ekspertlar bilan guruh tarkibida fikr-mulohaza sessiyasi"
+
+#: .\templates\index.html:289
+msgid "Стандартное участие в PizzaPitch (при условии прохождения отбора)"
+msgstr "PizzaPitchda standart ishtirok etish (tanlovdan o'tish sharti bilan)"
+
+#: .\templates\index.html:291
+#, fuzzy
+#| msgid "Регистрация закрыта"
+msgid "Регистрация с Standard Pass"
+msgstr "Ro'yxatga olish tugadi"
+
+#: .\templates\index.html:312
 msgid ""
 "PizzaPitch — это уникальная платформа продвижения, которая объединяет "
 "основателей стартапов, предпринимателей, менторов и экспертов в одном месте "
@@ -540,7 +624,7 @@ msgstr ""
 "startap asoschilari, tadbirkorlar, mentorlar va ekspertlarni bir maskanda "
 "jamlovchi noyob platforma."
 
-#: .\templates\index.html:337
+#: .\templates\index.html:313
 msgid ""
 "Участники также могут принимать участие в тренингах и расширять свои деловые "
 "связи, находя потенциальных партнеров или инвесторов."
@@ -549,23 +633,23 @@ msgstr ""
 "investorlarni topish hisobiga o‘z biznes aloqalarini rivojlantirish "
 "imkoniyatiga ega bo‘lishadi."
 
-#: .\templates\index.html:348
+#: .\templates\index.html:324
 msgid "Наши мероприятия"
 msgstr "Bizning tadbirlar"
 
-#: .\templates\index.html:396
+#: .\templates\index.html:372
 msgid "Наши партнеры"
 msgstr "Bizning hamkorlar"
 
-#: .\templates\index.html:414
+#: .\templates\index.html:390
 msgid "Наши менторы"
 msgstr "Bizning mentorlar"
 
-#: .\templates\index.html:447
+#: .\templates\index.html:423
 msgid "Будьте в курсе всех новостей"
 msgstr "Barcha yangiliklardan xabardor bo'ling."
 
-#: .\templates\index.html:451
+#: .\templates\index.html:427
 msgid ""
 "Подпишитесь на наш телеграм канал и будьте в курсе всех актуальных новостей "
 "или свяжитесь с нами."
@@ -573,22 +657,34 @@ msgstr ""
 "Telegram kanalimizga obuna bo'ling va barcha dolzarb yangiliklardan xabardor "
 "bo'ling yoki biz bilan bog'laning."
 
-#: .\templates\index.html:455
+#: .\templates\index.html:431
 msgid "Написать нам"
 msgstr "Biz bilan bog'laning"
 
-#: .\templates\index.html:456
+#: .\templates\index.html:432
 msgid "Подписаться"
 msgstr "Obuna bo'lish"
 
-#: .\templates\index.html:460
+#: .\templates\index.html:436
 msgid ""
 "Платформа PizzaPitch реализуется при технической и программной поддержке"
 msgstr "PizzaPitch platformasi O'zbekistondagi"
 
-#: .\templates\index.html:460
+#: .\templates\index.html:436
 msgid "ПРООН Узбекистан"
 msgstr "BMT Taraqqiyot Dasturining amaliy ko'magi asosida amalga oshiriladi."
+
+#~ msgid ""
+#~ "Чтобы принять участие в мероприятии в качестве гостя, пожалуйста, "
+#~ "заполните следующую форму"
+#~ msgstr ""
+#~ "Tadbirda mehmon sifatida qatnashish uchun quyidagi formani to'ldiring."
+
+#~ msgid "Принять участие"
+#~ msgstr "Ishtirok etish"
+
+#~ msgid "Регистрация завершена. Спасибо за интерес!"
+#~ msgstr "Ro'yxatga olish tugadi"
 
 #, fuzzy
 #~| msgid "Отправить заявку"
