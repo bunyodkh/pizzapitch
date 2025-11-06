@@ -804,6 +804,11 @@ span {
     padding: 1rem;
 }
 
+.premium-participant {
+    border-color: var(--brand-color);
+    border-width: 0.15rem;
+}
+
 .participant-startup {
     font-weight: 700;
     font-size: 1rem;
@@ -828,6 +833,14 @@ span {
 .participant-consent {
     font-size: 0.7rem;
     font-style: italic;
+}
+
+.green-text {
+    color: green;
+}
+
+.red-text {
+    color: red;
 }
 
 .export-link {

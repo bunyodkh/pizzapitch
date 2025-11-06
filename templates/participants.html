@@ -33,14 +33,17 @@
                 {% if registered_people %}
                 <ul>
                     {% for rp in registered_people %}
-                    <li class="participant">
-                        <h4 class="participant-startup"><a href="{{ rp.presentation_link }}" target="_blank">{{ rp.startup }}</a></h4>
-                        <p class="participant-startup-description">{{rp.startup_description}}</p>
+
+                    <li class="participant {% if rp.registration_type == 'premium' %} premium-participant {% endif %}">
+                        <h4 class="participant-startup"><a href="{{ rp.presentation_link }}" target="_blank">{{ rp.startup }}{% if rp.registration_type == 'premium' %}- PREMIUM{% endif %}</a></h4>
+                        <p class="participant-startup-description">{{rp.startup_description|truncatewords:10}}</p>
                         <p class="participant-name">Founder: {{ rp.name }}</p>
                         <p class="participant-phone">Phone: {{ rp.phone }}</p>
                         <p class="participant-telegram">Telegram: {{ rp.tg }}</p>
                         <p class="participant-consent">Consent: {{ rp.consent }}</p>
+                        {% if rp.registration_type == 'premium' %}{% if rp.payment_done %}<p class="participant-name bold green-text">PAYMENT DONE</p>{% else %}<p class="participant-name bold red-text">PAYMENT NOT DONE</p>{% endif %}{% endif %}
                     </li>
+                    
                     {% endfor %}
                 </ul>
                 {% endif %}
