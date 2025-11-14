@@ -122,17 +122,17 @@ class Guest(models.Model):
     phone = models.CharField(max_length=15, verbose_name=_("Телефон"), blank=True, null=True)
     tg = models.CharField(max_length=15, verbose_name=_("Телеграм"), blank=True, null=True)
 
-    CONSENT_CHOICES = [
-        ('yes', _("Да")),
-        ('no', _("Нет")),
-    ]
+    # CONSENT_CHOICES = [
+    #     ('yes', _("Да")),
+    #     ('no', _("Нет")),
+    # ]
 
-    guest_consent = models.CharField(
-        max_length=5,
-        choices=CONSENT_CHOICES,
-        default='no',
-        verbose_name=_("Согласие на обработку персональных данных")
-    )
+    # guest_consent = models.CharField(
+    #     max_length=5,
+    #     choices=CONSENT_CHOICES,
+    #     default='no',
+    #     verbose_name=_("Согласие на обработку персональных данных")
+    # )
 
     selected = models.BooleanField(default=False, verbose_name=_("Выбран"))
 

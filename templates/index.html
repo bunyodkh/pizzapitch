@@ -137,6 +137,81 @@
                     </div>
 
                     <div class="registration-form">
+                        {% if active_event.guest_registration and active_event.registration_closed and messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> 
+                                    {% if LANGUAGE_CODE == 'ru' %}Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся.{% endif %}
+                                    {% if LANGUAGE_CODE == 'uz' %}Arizangizni qabul qildik! Qiziqishingiz uchun rahmat. Siz bilan bog'lanamiz.{% endif %}
+                                    {% if LANGUAGE_CODE == 'en' %}We have received your application to participate! Thank you for your interest. We will contact you.{% endif %}     
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+
+
+                        {% if active_event.guest_registration and not messages %}
+                            <form class="form" action="{% url 'events:guest-registration'%}" method="POST">
+                                {% csrf_token %}
+
+                                <p class="guest-registration-heading">{% trans "Чтобы принять участие в мероприятии в качестве гостя, пожалуйста, заполните следующую форму" %}</p>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        {% if form.name.errors %}
+                                            <label>{{ form.name.errors.0 }}</label>
+                                            {{ form.name|add_class:"input-error" }}
+                                        {% else %}
+                                            <label>{{ form.name.label }}</label>
+                                            {{ form.name }} 
+                                        {% endif %}
+                                    </div>
+
+                                    <div class="input-group">
+                                        {% if form.phone.errors %}
+                                            <label>{{ form.phone.errors.0 }}</label>
+                                            {{ form.phone|add_class:"input-error" }}
+                                        {% else %}
+                                            <label>{{ form.phone.label }}</label>
+                                            {{ form.phone }} 
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        {% if form.tg.errors %}
+                                            <label>{{ form.tg.errors.0 }}</label>
+                                            {{ form.tg|add_class:"input-error" }}
+                                        {% else %}
+                                            <label>{{ form.tg.label }}</label>
+                                            {{ form.tg }} 
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <!-- <div class="form-group">
+                                    <div class="input-group">
+                                        {% if form.guest_consent.errors %}
+                                            <label>{{ form.guest_consent.errors.0 }}</label>
+                                            {{ form.guest_consent|add_class:"input-error" }}
+                                        {% else %}
+                                            <label>{{ form.guest_consent.label }}</label>
+                                            {{ form.guest_consent }} 
+                                        {% endif %}
+                                    </div>
+                                </div> -->
+                                
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <button type="submit" class="reg-button">{% trans 'Принять участие'%}</button>
+                                    </div>
+                                </div>
+                            </form>
+                        {% endif %}
+                    </div>
+
+                    <!-- <div class="registration-form">
                         {% if registration_type == 'standard' or registration_type == 'premium' %}
                             {% if messages %}
                                 <ul class="messages">
@@ -294,7 +369,7 @@
                                 </div>
                             </div>
                         {% endif %}
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>

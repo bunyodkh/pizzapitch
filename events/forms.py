@@ -79,20 +79,20 @@ class GuestRegistrationForm(forms.ModelForm):
     class Meta:
         model = Guest
         
-        fields = ['name', 'phone', 'tg', 'guest_consent']
+        fields = ['name', 'phone', 'tg']
         
         widgets = {
             'name': forms.TextInput(attrs={'class': 'input', 'id':'start-registration', 'placeholder': _('Ваше имя')}),
             'phone': forms.TextInput(attrs={'class': 'input', 'placeholder': _('Ваш телефон')}),
             'tg': forms.TextInput(attrs={'class': 'input', 'placeholder': _('Ваш ник в Телеграм')}),
-            'guest_consent': forms.Select(attrs={'class': 'input'}),
+            # 'guest_consent': forms.Select(attrs={'class': 'input'}),
         }
         
         labels = {
             'name': _('Полное имя'),
             'phone': _('Номер телефона'),
             'tg': _('Телеграм ник'),
-            'guest_consent': _('Согласны ли вы на обработку персональных данных?'),
+            # 'guest_consent': _('Согласны ли вы на обработку персональных данных?'),
         }
 
     
@@ -114,8 +114,8 @@ class GuestRegistrationForm(forms.ModelForm):
             raise forms.ValidationError(_("Телеграм ник обязателен."))
         return str(tg).strip()
 
-    def clean_guest_consent(self):
-        guest_consent = self.cleaned_data.get('guest_consent')
-        if guest_consent not in ['yes', 'no']:
-            raise forms.ValidationError(_("Пожалуйста, выберите согласие на обработку персональных данных."))
-        return guest_consent
+    # def clean_guest_consent(self):
+    #     guest_consent = self.cleaned_data.get('guest_consent')
+    #     if guest_consent not in ['yes', 'no']:
+    #         raise forms.ValidationError(_("Пожалуйста, выберите согласие на обработку персональных данных."))
+    #     return guest_consent

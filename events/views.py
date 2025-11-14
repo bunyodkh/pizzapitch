@@ -96,3 +96,29 @@ def export_participants_to_excel(request):
     )
     response['Content-Disposition'] = 'attachment; filename=participants.xlsx'
     return response
+
+
+
+def guest_registration(request):
+    active_event = Event.objects.filter(is_active=True).first()
+
+    # block if no active event or guest registration disabled
+    if not active_event or not getattr(active_event, 'guest_registration', False):
+        messages.error(request, _("Registration is closed."))
+        return redirect(request.META.get('HTTP_REFERER', '/'))
+
+    if request.method == 'POST':
+        form = GuestRegistrationForm(request.POST)
+        if form.is_valid():
+            guest = form.save(commit=False)
+            guest.event = active_event
+            guest.save()
+            messages.success(request, _("Guest registration successful!"))
+            return redirect(request.META.get('HTTP_REFERER', '/'))
+    else:
+        form = GuestRegistrationForm()
+
+    return render(request, 'index.html', {
+        'form': form,
+        'active_event': active_event,
+    })
