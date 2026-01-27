@@ -91,7 +91,7 @@
         </section>
     </section> -->
 
-    {% if active_event %} 
+    {% if active_event %}
     <section class="section with-background">
         <section class="section-content">
             <div class="hero">
@@ -101,7 +101,7 @@
                         <p>
                             {% if LANGUAGE_CODE == 'ru' %}{{ active_event.description }}{% endif %}
                             {% if LANGUAGE_CODE == 'uz' %}{{ active_event.description_uz }}{% endif %}
-                            {% if LANGUAGE_CODE == 'en' %}{{ active_event.description_en }}{% endif %}                            
+                            {% if LANGUAGE_CODE == 'en' %}{{ active_event.description_en }}{% endif %}
                         </p>
 
                         <div class="hero-details">
@@ -109,13 +109,13 @@
                                 <p>
                                 {% if LANGUAGE_CODE == 'ru' %}Адрес: {{ active_event.location }}{% endif %}
                                 {% if LANGUAGE_CODE == 'uz' %}Manzil: {{ active_event.location_uz }}{% endif %}
-                                {% if LANGUAGE_CODE == 'en' %}Address: {{ active_event.location_en }}{% endif %}  
+                                {% if LANGUAGE_CODE == 'en' %}Address: {{ active_event.location_en }}{% endif %}
                                 </p>
 
                                 <p>
                                 {% if LANGUAGE_CODE == 'ru' %}Дата: {{ active_event.date }}{% endif %}
                                 {% if LANGUAGE_CODE == 'uz' %}Sana: {{ active_event.date }}{% endif %}
-                                {% if LANGUAGE_CODE == 'en' %}Date: {{ active_event.date }}{% endif %}  
+                                {% if LANGUAGE_CODE == 'en' %}Date: {{ active_event.date }}{% endif %}
                                 </p>
 
                                 <p></p>
@@ -136,14 +136,14 @@
                         </div>
                     </div>
 
-                    <div class="registration-form">
+                    <!--<div class="registration-form">
                         {% if active_event.guest_registration and active_event.registration_closed and messages %}
                             <ul class="messages">
                                 {% for message in messages %}
-                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}> 
+                                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
                                     {% if LANGUAGE_CODE == 'ru' %}Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся.{% endif %}
                                     {% if LANGUAGE_CODE == 'uz' %}Arizangizni qabul qildik! Qiziqishingiz uchun rahmat. Siz bilan bog'lanamiz.{% endif %}
-                                    {% if LANGUAGE_CODE == 'en' %}We have received your application to participate! Thank you for your interest. We will contact you.{% endif %}     
+                                    {% if LANGUAGE_CODE == 'en' %}We have received your application to participate! Thank you for your interest. We will contact you.{% endif %}
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -163,7 +163,7 @@
                                             {{ form.name|add_class:"input-error" }}
                                         {% else %}
                                             <label>{{ form.name.label }}</label>
-                                            {{ form.name }} 
+                                            {{ form.name }}
                                         {% endif %}
                                     </div>
 
@@ -173,7 +173,7 @@
                                             {{ form.phone|add_class:"input-error" }}
                                         {% else %}
                                             <label>{{ form.phone.label }}</label>
-                                            {{ form.phone }} 
+                                            {{ form.phone }}
                                         {% endif %}
                                     </div>
                                 </div>
@@ -185,11 +185,11 @@
                                             {{ form.tg|add_class:"input-error" }}
                                         {% else %}
                                             <label>{{ form.tg.label }}</label>
-                                            {{ form.tg }} 
+                                            {{ form.tg }}
                                         {% endif %}
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <div class="input-group">
                                         <button type="submit" class="reg-button">{% trans 'Принять участие'%}</button>
@@ -197,9 +197,9 @@
                                 </div>
                             </form>
                         {% endif %}
-                    </div>
+                    </div>-->
 
-                    <!-- <div class="registration-form">
+                    <div class="registration-form">
                         {% if registration_type == 'standard' or registration_type == 'premium' %}
                             {% if messages %}
                                 <ul class="messages">
@@ -207,7 +207,7 @@
                                         <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
                                             {% if registration_type == 'premium' %}
                                                 {% if LANGUAGE_CODE == 'ru' %}
-                                                    Мы получили вашу заявку! 🎉. 
+                                                    Мы получили вашу заявку! 🎉.
                                                     <p class="payment-message">{% trans 'Для завершения регистрации Premium Pass, пожалуйста, оплатите 500,000 сум по ссылкам ниже.'%}</p>
                                                     <div class="payment-links">
                                                         <a class="payment-link" href="https://transfer.paycom.uz/60c9fdbbd54cf9fd7ef9aba8" target="_blank">{% trans 'Оплата через Payme'%}</a>
@@ -225,13 +225,13 @@
                                                 {% endif %}
 
                                                 {% if LANGUAGE_CODE == 'en' %}
-                                                    We've received your application! 🎉 
+                                                    We've received your application! 🎉
                                                     <p class="payment-message">{% trans 'Для завершения регистрации Premium Pass, пожалуйста, оплатите 500,000 сум по ссылкам ниже.'%}</p>
                                                     <div class="payment-links">
                                                         <a class="payment-link" href="https://transfer.paycom.uz/60c9fdbbd54cf9fd7ef9aba8" target="_blank">{% trans 'Оплата через Payme'%}</a>
                                                         <a class="payment-link" href="https://indoor.click.uz/pay?id=021696&t=0" target="_blank">{% trans 'Оплата через Click' %}</a>
                                                     </div>
-                                                {% endif %}     
+                                                {% endif %}
                                             {% elif registration_type == 'standard' %}
                                                 {% if LANGUAGE_CODE == 'ru' %}Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся.{% endif %}
                                                 {% if LANGUAGE_CODE == 'uz' %}Arizangizni qabul qildik! Qiziqish uchun rahmat. Siz bilan bog'lanamiz.{% endif %}
@@ -258,7 +258,7 @@
                                                 {{ form.name|add_class:"input-error" }}
                                             {% else %}
                                                 <label>{{ form.name.label }}</label>
-                                                {{ form.name }} 
+                                                {{ form.name }}
                                             {% endif %}
                                         </div>
                                         <div class="input-group">
@@ -267,7 +267,7 @@
                                                 {{ form.phone|add_class:"input-error" }}
                                             {% else %}
                                                 <label>{{ form.phone.label }}</label>
-                                                {{ form.phone }} 
+                                                {{ form.phone }}
                                             {% endif %}
                                         </div>
                                     </div>
@@ -278,7 +278,7 @@
                                                 {{ form.tg|add_class:"input-error" }}
                                             {% else %}
                                                 <label>{{ form.tg.label }}</label>
-                                                {{ form.tg }} 
+                                                {{ form.tg }}
                                             {% endif %}
                                         </div>
                                     </div>
@@ -289,7 +289,7 @@
                                                 {{ form.startup|add_class:"input-error" }}
                                             {% else %}
                                                 <label>{{ form.startup.label }}</label>
-                                                {{ form.startup }} 
+                                                {{ form.startup }}
                                             {% endif %}
                                         </div>
                                     </div>
@@ -299,7 +299,7 @@
                                             {{ form.startup_description|add_class:"input-error" }}
                                         {% else %}
                                             <label>{{ form.startup_description.label }}</label>
-                                            {{ form.startup_description }} 
+                                            {{ form.startup_description }}
                                         {% endif %}
                                     </div>
                                     <div class="form-group">
@@ -309,7 +309,7 @@
                                                 {{ form.presentation_link|add_class:"input-error" }}
                                             {% else %}
                                                 <label>{{ form.presentation_link.label }}</label>
-                                                {{ form.presentation_link }} 
+                                                {{ form.presentation_link }}
                                             {% endif %}
                                         </div>
                                     </div>
@@ -320,7 +320,7 @@
                                                 {{ form.participants_consent|add_class:"input-error" }}
                                             {% else %}
                                                 <label>{{ form.participants_consent.label }}</label>
-                                                {{ form.participants_consent }} 
+                                                {{ form.participants_consent }}
                                             {% endif %}
                                         </div>
                                     </div>
@@ -357,7 +357,7 @@
                                 </div>
                             </div>
                         {% endif %}
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -471,12 +471,12 @@
                                     {% if LANGUAGE_CODE == 'uz' %}{{ mentor.position_uz }}{% endif %}
                                     {% if LANGUAGE_CODE == 'en' %}{{ mentor.position_en }}{% endif %}
                                 </p>
-                            </div> 
+                            </div>
                         </li>
                         {% endfor %}
-                    </ul>    
+                    </ul>
                 </div>
-            </div>  
+            </div>
         </section>
     </section>
     {% endif %}
@@ -541,13 +541,13 @@
         </script>
     {% endif %}
 
-    <script defer> 
+    <script defer>
         var wrapperMenu = document.querySelector('.wrapper-menu');
         var navItems = document.querySelector('.nav-items');
         var lang = document.querySelector('.lang');
 
         wrapperMenu.addEventListener('click', function(){
-            wrapperMenu.classList.toggle('open');  
+            wrapperMenu.classList.toggle('open');
             navItems.classList.toggle('nav-open');
             lang.classList.toggle('lang-open');
         });
