@@ -200,57 +200,27 @@
                     </div>-->
 
                     <div class="registration-form">
-                        {% if registration_type == 'standard' or registration_type == 'premium' %}
-                            {% if messages %}
-                                <ul class="messages">
-                                    {% for message in messages %}
-                                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
-                                            {% if registration_type == 'premium' %}
-                                                {% if LANGUAGE_CODE == 'ru' %}
-                                                    Мы получили вашу заявку! 🎉.
-                                                    <p class="payment-message">{% trans 'Для завершения регистрации Premium Pass, пожалуйста, оплатите 500,000 сум по ссылкам ниже.'%}</p>
-                                                    <div class="payment-links">
-                                                        <a class="payment-link" href="https://transfer.paycom.uz/60c9fdbbd54cf9fd7ef9aba8" target="_blank">{% trans 'Оплата через Payme'%}</a>
-                                                        <a class="payment-link" href="https://indoor.click.uz/pay?id=021696&t=0" target="_blank">{% trans 'Оплата через Click' %}</a>
-                                                    </div>
-                                                {% endif %}
-
-                                                {% if LANGUAGE_CODE == 'uz' %}
-                                                    Arizangizni qabul qildik! 🎉
-                                                    <p class="payment-message">{% trans 'Для завершения регистрации Premium Pass, пожалуйста, оплатите 500,000 сум по ссылкам ниже.'%}</p>
-                                                    <div class="payment-links">
-                                                        <a class="payment-link" href="https://transfer.paycom.uz/60c9fdbbd54cf9fd7ef9aba8" target="_blank">{% trans 'Оплата через Payme'%}</a>
-                                                        <a class="payment-link" href="https://indoor.click.uz/pay?id=021696&t=0" target="_blank">{% trans 'Оплата через Click' %}</a>
-                                                    </div>
-                                                {% endif %}
-
-                                                {% if LANGUAGE_CODE == 'en' %}
-                                                    We've received your application! 🎉
-                                                    <p class="payment-message">{% trans 'Для завершения регистрации Premium Pass, пожалуйста, оплатите 500,000 сум по ссылкам ниже.'%}</p>
-                                                    <div class="payment-links">
-                                                        <a class="payment-link" href="https://transfer.paycom.uz/60c9fdbbd54cf9fd7ef9aba8" target="_blank">{% trans 'Оплата через Payme'%}</a>
-                                                        <a class="payment-link" href="https://indoor.click.uz/pay?id=021696&t=0" target="_blank">{% trans 'Оплата через Click' %}</a>
-                                                    </div>
-                                                {% endif %}
-                                            {% elif registration_type == 'standard' %}
-                                                {% if LANGUAGE_CODE == 'ru' %}Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся.{% endif %}
-                                                {% if LANGUAGE_CODE == 'uz' %}Arizangizni qabul qildik! Qiziqish uchun rahmat. Siz bilan bog'lanamiz.{% endif %}
-                                                {% if LANGUAGE_CODE == 'en' %}We have received your application! Thank you for the interest. We will contact you.{% endif %}
-                                            {% endif %}
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            {% else %}
-                                <form class="form" method="POST">
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+                                        {% if LANGUAGE_CODE == 'ru' %}Мы получили вашу заявку на участие! Спасибо за интерес. Мы с вами свяжемся.{% endif %}
+                                        {% if LANGUAGE_CODE == 'uz' %}Arizangizni qabul qildik! Qiziqish uchun rahmat. Siz bilan bog'lanamiz.{% endif %}
+                                        {% if LANGUAGE_CODE == 'en' %}We have received your application! Thank you for the interest. We will contact you.{% endif %}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                                <form class="form" method="POST" action="{% url 'events:standard-registration' %}">
                                     {% csrf_token %}
-                                    <div>
+                                    <!-- <div>
                                         {% if registration_type == 'premium' %}
                                             <h3 class="premium-registration-heading">{% trans 'Premium Pass Регистрация' %}</h3>
                                         {% endif %}
                                         {% if registration_type == 'standard' %}
                                             <h3 class="free-registration-heading">{% trans 'Standard Pass Регистрация' %}</h3>
                                         {% endif %}
-                                    </div>
+                                    </div> -->
                                     <div class="form-group">
                                         <div class="input-group">
                                             {% if form.name.errors %}
@@ -332,31 +302,6 @@
                                     </div>
                                 </form>
                             {% endif %}
-                        {% else %}
-                            <div class="features">
-                                <div class="premium-features">
-                                    <h3>{% trans 'Premium Pass' %}</h3>
-                                    <div>
-                                        <div class="premium-feature"><p>{% trans 'Кофе-брейк и пицца' %}</p></div>
-                                        <div class="premium-feature"><p>{% trans 'Персонализированная обратная связь от приглашенных экспертов' %}</p></div>
-                                        <div class="premium-feature"><p>{% trans 'Прямой вход в PizzaPitch без процесса отбора' %}</p></div>
-                                        <div class="premium-feature"><p>{% trans 'Индивидуальные менторские сессии с отраслевыми экспертами' %}</p></div>
-                                        <div class="premium-feature"><p>{% trans 'Презентация профиля стартапа клубу CS// Angels Club' %}</p></div>
-                                        <div class="premium-feature"><p>{% trans 'Шанс выиграть сертификат C-Space стоимостью до 3 миллионов сумов' %}</p></div>
-                                    </div>
-                                    <a class="premium-feature-button reg-button" href="{% url 'events:premium-registration' %}">{% trans 'Регистрация с Premium Pass'%}</a>
-                                </div>
-                                <div class="free-features">
-                                    <h3>{% trans 'Standard Pass' %}</h3>
-                                    <div>
-                                        <div class="free-feature"><p>{% trans 'Кофе-брейк и пицца' %}</p></div>
-                                        <div class="free-feature"><p>{% trans 'Групповая сессия обратной связи с приглашенными экспертами' %}</p></div>
-                                        <div class="free-feature"><p>{% trans 'Стандартное участие в PizzaPitch (при условии прохождения отбора)' %}</p></div>
-                                    </div>
-                                    <a class="free-feature-button reg-button" href="{% url 'events:standard-registration' %}">{% trans 'Регистрация с Standard Pass'%}</a>
-                                </div>
-                            </div>
-                        {% endif %}
                     </div>
                 </div>
             </div>
