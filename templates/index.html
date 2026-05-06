@@ -106,6 +106,12 @@
 
                         <div class="hero-details">
                             <div class="logistics">
+                                {% if LANGUAGE_CODE == 'ru' %}<p>🔔 Условия: Мы берем только 10 проектов! Участие для каждого стартапа — 1.200.000 сум. Это ваш шанс получить доступ к инвесторам и экспертам. Успейте забронировать место!'</p>{% endif %}
+                                {% if LANGUAGE_CODE == 'en' %}<p>🔔 Terms and Conditions: We are accepting only 10 projects! The participation fee for each startup is 1,200,000 UZS. This is your chance to gain access to investors and experts. Hurry and book your spot!</p>{% endif %}
+                                {% if LANGUAGE_CODE == 'uz' %}<p>🔔 Shartlar: Biz faqat 10 ta loyihani qabul qilamiz! Har bir startap uchun ishtirok etish narxi — 1 200 000 so'm. Bu investorlar va ekspertlar bilan aloqa o'rnatish uchun sizning imkoniyatingizdir. Joyingizni band qilishga shoshiling!</p>{% endif %}
+                            </div>
+
+                            <div class="logistics">
                                 <p>
                                 {% if LANGUAGE_CODE == 'ru' %}Адрес: {{ active_event.location }}{% endif %}
                                 {% if LANGUAGE_CODE == 'uz' %}Manzil: {{ active_event.location_uz }}{% endif %}

@@ -405,8 +405,8 @@ span {
     width: 50%;
     border: 1px solid #ffe1cd;
     border-radius: 0.5rem;
-    ;
     background-color: #fff;
+    height: fit-content;
 }
 
 .form {
